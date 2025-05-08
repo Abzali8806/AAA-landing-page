@@ -22,7 +22,7 @@ export function ServiceCard({
 }: ServiceCardProps) {
   return (
     <motion.div
-      className="service-card bg-primary rounded-xl p-8 shadow-lg"
+      className="service-card bg-white/5 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-accent/10"
       variants={scaleUp}
       initial="hidden"
       whileInView="visible"
@@ -34,21 +34,21 @@ export function ServiceCard({
         delay: index * 0.1 
       }}
     >
-      <div className="bg-accent/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+      <div className="bg-accent/20 rounded-full w-16 h-16 flex items-center justify-center mb-6 shadow-inner">
         <Icon className="text-accent text-2xl" />
       </div>
-      <h3 className="text-xl font-inter font-bold mb-4">{title}</h3>
-      <p className="font-roboto font-light mb-6">
+      <h3 className="text-xl font-inter font-bold mb-4 text-white">{title}</h3>
+      <p className="font-roboto font-light mb-6 text-gray-200">
         {description}
       </p>
       <a 
         href={ctaHref} 
-        className="text-accent hover:text-highlight font-inter font-medium flex items-center"
+        className="text-accent hover:text-highlight font-inter font-medium flex items-center group"
       >
         {ctaText} 
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
-          className="h-5 w-5 ml-2" 
+          className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
           viewBox="0 0 20 20" 
           fill="currentColor"
         >

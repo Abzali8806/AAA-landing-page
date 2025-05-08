@@ -24,7 +24,7 @@ export function CaseStudyCard({
 }: CaseStudyCardProps) {
   return (
     <motion.div
-      className="bg-darkbg rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
+      className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-accent/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent/10"
       variants={scaleUp}
       initial="hidden"
       whileInView="visible"
@@ -35,27 +35,30 @@ export function CaseStudyCard({
         delay: index * 0.1 
       }}
     >
-      <img 
-        src={image}
-        alt={imageAlt}
-        className="w-full h-56 object-cover"
-      />
+      <div className="relative overflow-hidden">
+        <img 
+          src={image}
+          alt={imageAlt}
+          className="w-full h-56 object-cover transition-transform duration-500 hover:scale-110"
+        />
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/70 to-transparent"></div>
+      </div>
       <div className="p-6">
-        <span className="bg-accent/20 text-accent text-sm font-inter font-medium px-3 py-1 rounded-full">
+        <span className="bg-accent/30 text-white text-sm font-inter font-medium px-3 py-1 rounded-full inline-block">
           {category}
         </span>
-        <h3 className="text-xl font-inter font-bold mt-4 mb-2">{title}</h3>
-        <p className="font-roboto font-light mb-4">
+        <h3 className="text-xl font-inter font-bold mt-4 mb-2 text-white">{title}</h3>
+        <p className="font-roboto font-light mb-4 text-gray-200">
           {description}
         </p>
         <a 
           href={ctaHref} 
-          className="text-accent hover:text-highlight font-inter font-medium flex items-center"
+          className="text-accent hover:text-highlight font-inter font-medium flex items-center group"
         >
           {ctaText}
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
-            className="h-5 w-5 ml-2" 
+            className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
             viewBox="0 0 20 20" 
             fill="currentColor"
           >

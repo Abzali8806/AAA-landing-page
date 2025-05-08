@@ -29,8 +29,9 @@ export function CaseStudiesSection() {
   ];
 
   return (
-    <section id="case-studies" className="py-20 bg-gradient-to-b from-primary to-secondary relative">
-      <TechPattern />
+    <section id="case-studies" className="py-20 bg-gradient-to-b from-[#2d5277] to-[#1b3553] relative">
+      <div className="absolute inset-0 section-gradient"></div>
+      <TechPattern className="opacity-40" />
       
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         <motion.div 
@@ -40,10 +41,10 @@ export function CaseStudiesSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          <h2 className="text-3xl md:text-4xl font-inter font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-inter font-bold mb-4 text-white">
             Our <span className="text-accent">Case Studies</span>
           </h2>
-          <p className="text-xl max-w-3xl mx-auto font-roboto font-light">
+          <p className="text-xl max-w-3xl mx-auto font-roboto font-light text-gray-200">
             See how we've helped businesses across various industries achieve operational excellence.
           </p>
         </motion.div>
@@ -77,7 +78,7 @@ export function CaseStudiesSection() {
         >
           <a 
             href="#contact" 
-            className="border border-accent text-accent hover:text-highlight hover:border-highlight font-inter font-medium px-8 py-3 rounded-md transition-colors duration-300 inline-block"
+            className="border-2 border-accent/80 text-white hover:text-highlight hover:border-highlight font-inter font-medium px-8 py-3 rounded-md transition-all duration-300 inline-block hover:bg-accent/10"
           >
             View All Case Studies
           </a>

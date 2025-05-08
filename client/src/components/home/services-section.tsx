@@ -46,8 +46,9 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-secondary to-darkbg relative">
-      <TechPattern />
+    <section id="services" className="py-20 bg-gradient-to-b from-[#243b6c] via-[#2a4872] to-[#1e3a60] relative">
+      <div className="absolute inset-0 section-gradient"></div>
+      <TechPattern className="opacity-50" />
       
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         <motion.div 
@@ -60,7 +61,7 @@ export function ServicesSection() {
           <h2 className="text-3xl md:text-4xl font-inter font-bold mb-4">
             Our <span className="text-accent">Services</span>
           </h2>
-          <p className="text-xl max-w-3xl mx-auto font-roboto font-light">
+          <p className="text-xl max-w-3xl mx-auto font-roboto font-light text-gray-100">
             We help businesses streamline their operations through intelligent automation and process optimization.
           </p>
         </motion.div>
