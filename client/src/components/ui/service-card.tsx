@@ -1,0 +1,64 @@
+import { ReactNode } from "react";
+import { motion } from "framer-motion";
+import { LucideIcon } from "lucide-react";
+import { scaleUp } from "@/lib/animations";
+
+interface ServiceCardProps {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  ctaText?: string;
+  ctaHref?: string;
+  index?: number;
+}
+
+export function ServiceCard({ 
+  icon: Icon, 
+  title, 
+  description, 
+  ctaText = "Learn More", 
+  ctaHref = "#contact",
+  index = 0 
+}: ServiceCardProps) {
+  return (
+    <motion.div
+      className="service-card bg-primary rounded-xl p-8 shadow-lg"
+      variants={scaleUp}
+      initial="hidden"
+      whileInView="visible"
+      whileHover="hover"
+      viewport={{ once: true, amount: 0.1 }}
+      custom={index}
+      transition={{ 
+        duration: 0.5,
+        delay: index * 0.1 
+      }}
+    >
+      <div className="bg-accent/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+        <Icon className="text-accent text-2xl" />
+      </div>
+      <h3 className="text-xl font-inter font-bold mb-4">{title}</h3>
+      <p className="font-roboto font-light mb-6">
+        {description}
+      </p>
+      <a 
+        href={ctaHref} 
+        className="text-accent hover:text-highlight font-inter font-medium flex items-center"
+      >
+        {ctaText} 
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="h-5 w-5 ml-2" 
+          viewBox="0 0 20 20" 
+          fill="currentColor"
+        >
+          <path 
+            fillRule="evenodd" 
+            d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" 
+            clipRule="evenodd" 
+          />
+        </svg>
+      </a>
+    </motion.div>
+  );
+}
