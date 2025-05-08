@@ -65,8 +65,9 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-darkbg to-primary relative">
-      <TechPattern />
+    <section id="contact" className="py-20 bg-gradient-to-b from-[#132846] to-[#173148] relative">
+      <div className="absolute inset-0 section-gradient"></div>
+      <TechPattern className="opacity-40" />
       
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         <motion.div 
@@ -76,17 +77,17 @@ export function ContactSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          <h2 className="text-3xl md:text-4xl font-inter font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-inter font-bold mb-4 text-white">
             Get In <span className="text-accent">Touch</span>
           </h2>
-          <p className="text-xl max-w-3xl mx-auto font-roboto font-light">
+          <p className="text-xl max-w-3xl mx-auto font-roboto font-light text-gray-200">
             Ready to streamline your operations? Reach out to us to discuss how we can help optimize your workflows.
           </p>
         </motion.div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <motion.div 
-            className="bg-secondary bg-opacity-70 rounded-xl p-8 shadow-lg"
+            className="bg-white/5 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-accent/10"
             variants={slideInLeft}
             initial="hidden"
             whileInView="visible"
@@ -95,12 +96,12 @@ export function ContactSection() {
             <form onSubmit={form.handleSubmit(onSubmit)} id="contact-form">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label htmlFor="name" className="block mb-2 font-inter font-medium">Name</label>
+                  <label htmlFor="name" className="block mb-2 font-inter font-medium text-white">Name</label>
                   <input 
                     {...form.register("name")}
                     type="text" 
                     id="name" 
-                    className={`w-full px-4 py-3 bg-darkbg border ${form.formState.errors.name ? 'border-destructive' : 'border-gray-700'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-foreground`}
+                    className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border ${form.formState.errors.name ? 'border-destructive' : 'border-accent/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white`}
                     placeholder="Your name" 
                   />
                   {form.formState.errors.name && (
@@ -108,12 +109,12 @@ export function ContactSection() {
                   )}
                 </div>
                 <div>
-                  <label htmlFor="email" className="block mb-2 font-inter font-medium">Email</label>
+                  <label htmlFor="email" className="block mb-2 font-inter font-medium text-white">Email</label>
                   <input 
                     {...form.register("email")}
                     type="email" 
                     id="email" 
-                    className={`w-full px-4 py-3 bg-darkbg border ${form.formState.errors.email ? 'border-destructive' : 'border-gray-700'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-foreground`}
+                    className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border ${form.formState.errors.email ? 'border-destructive' : 'border-accent/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white`}
                     placeholder="Your email" 
                   />
                   {form.formState.errors.email && (
@@ -123,30 +124,30 @@ export function ContactSection() {
               </div>
               
               <div className="mb-6">
-                <label htmlFor="company" className="block mb-2 font-inter font-medium">Company</label>
+                <label htmlFor="company" className="block mb-2 font-inter font-medium text-white">Company</label>
                 <input 
                   {...form.register("company")}
                   type="text" 
                   id="company" 
-                  className="w-full px-4 py-3 bg-darkbg border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-foreground"
+                  className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-accent/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white"
                   placeholder="Your company" 
                 />
               </div>
               
               <div className="mb-6">
-                <label htmlFor="service" className="block mb-2 font-inter font-medium">Service You're Interested In</label>
+                <label htmlFor="service" className="block mb-2 font-inter font-medium text-white">Service You're Interested In</label>
                 <select 
                   {...form.register("service")}
                   id="service" 
-                  className={`w-full px-4 py-3 bg-darkbg border ${form.formState.errors.service ? 'border-destructive' : 'border-gray-700'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-foreground`}
+                  className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border ${form.formState.errors.service ? 'border-destructive' : 'border-accent/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white`}
                 >
-                  <option value="" disabled>Select a service</option>
-                  <option value="workflow-automation">Workflow Automation</option>
-                  <option value="process-optimization">Business Process Optimization</option>
-                  <option value="software-integration">Custom Software Integration</option>
-                  <option value="data-analytics">Data Analytics Solutions</option>
-                  <option value="digital-transformation">Digital Transformation Consulting</option>
-                  <option value="security-compliance">Security & Compliance</option>
+                  <option value="" disabled className="bg-darkbg text-white">Select a service</option>
+                  <option value="workflow-automation" className="bg-darkbg text-white">Workflow Automation</option>
+                  <option value="process-optimization" className="bg-darkbg text-white">Business Process Optimization</option>
+                  <option value="software-integration" className="bg-darkbg text-white">Custom Software Integration</option>
+                  <option value="data-analytics" className="bg-darkbg text-white">Data Analytics Solutions</option>
+                  <option value="digital-transformation" className="bg-darkbg text-white">Digital Transformation Consulting</option>
+                  <option value="security-compliance" className="bg-darkbg text-white">Security & Compliance</option>
                 </select>
                 {form.formState.errors.service && (
                   <p className="text-destructive text-sm mt-1">{form.formState.errors.service.message}</p>
@@ -154,12 +155,12 @@ export function ContactSection() {
               </div>
               
               <div className="mb-6">
-                <label htmlFor="message" className="block mb-2 font-inter font-medium">Message</label>
+                <label htmlFor="message" className="block mb-2 font-inter font-medium text-white">Message</label>
                 <textarea 
                   {...form.register("message")}
                   id="message" 
                   rows={4} 
-                  className={`w-full px-4 py-3 bg-darkbg border ${form.formState.errors.message ? 'border-destructive' : 'border-gray-700'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-foreground`}
+                  className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border ${form.formState.errors.message ? 'border-destructive' : 'border-accent/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white`}
                   placeholder="Tell us about your project" 
                 />
                 {form.formState.errors.message && (
@@ -169,7 +170,7 @@ export function ContactSection() {
               
               <button 
                 type="submit" 
-                className="w-full bg-accent hover:bg-highlight text-primary font-inter font-medium px-6 py-3 rounded-md transition-colors duration-300 flex justify-center items-center"
+                className="w-full bg-accent hover:bg-highlight text-primary font-inter font-medium px-6 py-3 rounded-md transition-colors duration-300 flex justify-center items-center shadow-lg shadow-accent/20"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -190,76 +191,76 @@ export function ContactSection() {
             viewport={{ once: true, amount: 0.1 }}
           >
             <motion.div 
-              className="bg-secondary bg-opacity-70 rounded-xl p-8 shadow-lg mb-8"
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-accent/10 mb-8"
               whileHover={{ y: -5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <h3 className="text-2xl font-inter font-bold mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-inter font-bold mb-6 text-white">Contact Information</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-accent/10 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4">
+                  <div className="bg-accent/20 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4 shadow-inner">
                     <MapPin className="text-accent text-xl" />
                   </div>
                   <div>
                     <h4 className="font-inter font-medium text-accent mb-1">Address</h4>
-                    <p className="font-roboto font-light">The Hive, 96 Fleet Street<br />London, EC4Y 1HB<br />United Kingdom</p>
+                    <p className="font-roboto font-light text-gray-200">The Hive, 96 Fleet Street<br />London, EC4Y 1HB<br />United Kingdom</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-accent/10 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4">
+                  <div className="bg-accent/20 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4 shadow-inner">
                     <Mail className="text-accent text-xl" />
                   </div>
                   <div>
                     <h4 className="font-inter font-medium text-accent mb-1">Email</h4>
-                    <p className="font-roboto font-light">info@optiflows.co.uk</p>
+                    <p className="font-roboto font-light text-gray-200">info@optiflows.co.uk</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-accent/10 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4">
+                  <div className="bg-accent/20 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4 shadow-inner">
                     <Phone className="text-accent text-xl" />
                   </div>
                   <div>
                     <h4 className="font-inter font-medium text-accent mb-1">Phone</h4>
-                    <p className="font-roboto font-light">+44 (0) 20 1234 5678</p>
+                    <p className="font-roboto font-light text-gray-200">+44 (0) 20 1234 5678</p>
                   </div>
                 </div>
               </div>
             </motion.div>
             
             <motion.div 
-              className="bg-secondary bg-opacity-70 rounded-xl p-8 shadow-lg"
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-accent/10"
               whileHover={{ y: -5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <h3 className="text-2xl font-inter font-bold mb-6">Follow Us</h3>
+              <h3 className="text-2xl font-inter font-bold mb-6 text-white">Follow Us</h3>
               <div className="flex space-x-4">
                 <a 
                   href="#" 
-                  className="bg-accent/10 hover:bg-accent/20 rounded-full w-12 h-12 flex items-center justify-center transition-colors duration-300"
+                  className="bg-accent/20 hover:bg-accent/30 rounded-full w-12 h-12 flex items-center justify-center transition-colors duration-300 shadow-inner"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="text-accent text-xl" />
                 </a>
                 <a 
                   href="#" 
-                  className="bg-accent/10 hover:bg-accent/20 rounded-full w-12 h-12 flex items-center justify-center transition-colors duration-300"
+                  className="bg-accent/20 hover:bg-accent/30 rounded-full w-12 h-12 flex items-center justify-center transition-colors duration-300 shadow-inner"
                   aria-label="Twitter"
                 >
                   <Twitter className="text-accent text-xl" />
                 </a>
                 <a 
                   href="#" 
-                  className="bg-accent/10 hover:bg-accent/20 rounded-full w-12 h-12 flex items-center justify-center transition-colors duration-300"
+                  className="bg-accent/20 hover:bg-accent/30 rounded-full w-12 h-12 flex items-center justify-center transition-colors duration-300 shadow-inner"
                   aria-label="Facebook"
                 >
                   <Facebook className="text-accent text-xl" />
                 </a>
                 <a 
                   href="#" 
-                  className="bg-accent/10 hover:bg-accent/20 rounded-full w-12 h-12 flex items-center justify-center transition-colors duration-300"
+                  className="bg-accent/20 hover:bg-accent/30 rounded-full w-12 h-12 flex items-center justify-center transition-colors duration-300 shadow-inner"
                   aria-label="Instagram"
                 >
                   <Instagram className="text-accent text-xl" />
