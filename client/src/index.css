@@ -168,11 +168,13 @@
   .hero-grid-930 {
     display: flex;
     flex-direction: column;
+    min-height: 70vh !important;
   }
   
   .hero-text-930 {
     text-align: center;
     order: 1;
+    padding: 2rem 1rem !important;
   }
   
   .hero-image-930 {
