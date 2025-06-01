@@ -79,7 +79,7 @@ export function AboutSection() {
             >
               <a 
                 href="#contact" 
-                className="bg-accent hover:bg-highlight text-primary font-inter font-medium px-6 sm:px-8 py-3 rounded-md transition-colors duration-300 inline-block shadow-lg shadow-accent/20 text-center w-full sm:w-auto"
+                className="bg-accent hover:bg-accent/90 text-gray-900 font-inter font-medium px-6 sm:px-8 py-3 rounded-md transition-colors duration-300 inline-block shadow-lg shadow-accent/20 text-center w-full sm:w-auto"
               >
                 Work With Us
               </a>
