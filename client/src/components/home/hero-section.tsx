@@ -8,10 +8,10 @@ export function HeroSection() {
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155]">
       <DynamicHeroBackground elementCount={80} lineCount={20} />
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <div className="hero-grid-930 gap-8 items-center min-h-[80vh]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10 flex items-center justify-center min-h-screen">
+        <div className="hero-grid-930 gap-8 items-center justify-center w-full">
           <motion.div 
-            className="hero-text-930 max-w-5xl mx-auto"
+            className="hero-text-930 max-w-5xl mx-auto flex flex-col items-center justify-center"
             initial="hidden"
             animate="visible"
             variants={fadeUp}
