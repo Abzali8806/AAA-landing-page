@@ -146,6 +146,40 @@
   }
 }
 
+/* Custom responsive classes for 850px breakpoint */
+@media (min-width: 850px) {
+  .hero-grid-850 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .hero-text-850 {
+    text-align: left;
+    order: 1;
+  }
+  
+  .hero-image-850 {
+    display: block;
+    order: 2;
+  }
+}
+
+@media (max-width: 849px) {
+  .hero-grid-850 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero-text-850 {
+    text-align: center;
+    order: 1;
+  }
+  
+  .hero-image-850 {
+    display: none;
+  }
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 10px;

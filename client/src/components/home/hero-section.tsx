@@ -9,9 +9,9 @@ export function HeroSection() {
       <DynamicHeroBackground elementCount={80} lineCount={20} />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center min-h-[80vh] lg:min-h-[85vh]">
+        <div className="hero-grid-850 gap-8 items-center min-h-[80vh]">
           <motion.div 
-            className="text-center lg:text-left order-2 lg:order-1"
+            className="hero-text-850 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
             initial="hidden"
             animate="visible"
             variants={fadeUp}
@@ -51,7 +51,7 @@ export function HeroSection() {
           </motion.div>
           
           <motion.div 
-            className="block order-1 lg:order-2 relative"
+            className="hidden xl:block order-1 xl:order-2 relative"
             variants={float}
             initial="hidden"
             animate="visible"
