@@ -84,7 +84,7 @@ export function Navbar() {
           
           <a 
             href="#contact" 
-            className="hidden md:block bg-accent hover:bg-highlight text-primary font-inter font-medium px-5 py-2 rounded-md transition-all duration-300 shadow-lg shadow-accent/20 hover:scale-105"
+            className="hidden md:block bg-accent hover:bg-accent/90 text-gray-900 font-inter font-medium px-5 py-2 rounded-md transition-all duration-300 shadow-lg shadow-accent/20 hover:scale-105"
           >
             Get Started
           </a>
@@ -116,7 +116,7 @@ export function Navbar() {
               <li className="pt-2">
                 <a 
                   href="#contact" 
-                  className="block bg-accent hover:bg-highlight text-primary font-inter font-medium px-5 py-2 rounded-md text-center transition-all duration-300 shadow-md shadow-accent/20"
+                  className="block bg-accent hover:bg-accent/90 text-gray-900 font-inter font-medium px-5 py-2 rounded-md text-center transition-all duration-300 shadow-md shadow-accent/20"
                   onClick={() => setIsOpen(false)}
                 >
                   Get Started
