@@ -37,15 +37,17 @@ export function HeroSection() {
             >
               <a 
                 href="#contact" 
-                className="bg-accent hover:bg-highlight text-primary font-inter font-medium px-6 sm:px-8 py-3 rounded-md transition-colors duration-300 text-base sm:text-lg shadow-lg shadow-accent/20 text-center"
+                className="group relative bg-gradient-to-r from-accent to-highlight hover:from-highlight hover:to-accent text-primary font-inter font-semibold px-8 py-4 rounded-xl transition-all duration-300 text-base sm:text-lg shadow-xl shadow-accent/30 hover:shadow-2xl hover:shadow-accent/40 text-center transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
               >
-                Start Your Transformation
+                <span className="relative z-10">Start Your Transformation</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
               <a 
                 href="#services" 
-                className="border-2 border-accent/80 text-white hover:text-highlight hover:border-highlight font-inter font-medium px-6 sm:px-8 py-3 rounded-md transition-all duration-300 text-base sm:text-lg hover:bg-accent/10 text-center"
+                className="group relative border-2 border-accent/60 bg-transparent hover:bg-accent/10 text-white hover:text-accent font-inter font-semibold px-8 py-4 rounded-xl transition-all duration-300 text-base sm:text-lg text-center transform hover:scale-105 hover:-translate-y-1 backdrop-blur-sm"
               >
-                Explore Services
+                <span className="relative z-10">Explore Services</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
               </a>
             </motion.div>
           </motion.div>

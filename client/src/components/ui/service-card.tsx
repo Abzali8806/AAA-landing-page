@@ -43,21 +43,24 @@ export function ServiceCard({
       </p>
       <a 
         href={ctaHref} 
-        className="text-accent hover:text-highlight font-inter font-medium flex items-center group"
+        className="group relative inline-flex items-center bg-gradient-to-r from-accent/20 to-highlight/20 hover:from-accent/30 hover:to-highlight/30 text-accent hover:text-white font-inter font-semibold px-6 py-3 rounded-lg transition-all duration-300 border border-accent/30 hover:border-accent/50 backdrop-blur-sm transform hover:scale-105"
       >
-        {ctaText} 
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
-          viewBox="0 0 20 20" 
-          fill="currentColor"
-        >
-          <path 
-            fillRule="evenodd" 
-            d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" 
-            clipRule="evenodd" 
-          />
-        </svg>
+        <span className="relative z-10 flex items-center">
+          {ctaText}
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
+            viewBox="0 0 20 20" 
+            fill="currentColor"
+          >
+            <path 
+              fillRule="evenodd" 
+              d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" 
+              clipRule="evenodd" 
+            />
+          </svg>
+        </span>
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
       </a>
     </motion.div>
   );
