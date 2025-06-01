@@ -37,13 +37,13 @@ export function HeroSection() {
             >
               <a 
                 href="#contact" 
-                className="bg-accent hover:bg-accent/90 text-gray-900 font-inter font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-base sm:text-lg shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 text-center"
+                className="bg-accent hover:bg-accent/80 text-white font-inter font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-base sm:text-lg shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 text-center"
               >
                 Start Your Transformation
               </a>
               <a 
                 href="#services" 
-                className="border-2 border-accent text-white hover:bg-accent hover:text-gray-900 font-inter font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-base sm:text-lg text-center"
+                className="border-2 border-accent text-white hover:bg-accent hover:text-white font-inter font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-base sm:text-lg text-center"
               >
                 Explore Services
               </a>

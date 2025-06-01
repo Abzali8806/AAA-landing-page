@@ -78,7 +78,7 @@ export function CaseStudiesSection() {
         >
           <a 
             href="#contact" 
-            className="border-2 border-accent text-white hover:bg-accent hover:text-gray-900 font-inter font-medium px-6 sm:px-8 py-3 rounded-md transition-all duration-300 inline-block text-center w-full sm:w-auto max-w-xs sm:max-w-none"
+            className="border-2 border-accent text-white hover:bg-accent hover:text-white font-inter font-medium px-6 sm:px-8 py-3 rounded-md transition-all duration-300 inline-block text-center w-full sm:w-auto max-w-xs sm:max-w-none"
           >
             View All Case Studies
           </a>
