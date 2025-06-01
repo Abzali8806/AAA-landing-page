@@ -43,7 +43,7 @@ export function ServiceCard({
       </p>
       <a 
         href={ctaHref} 
-        className="inline-flex items-center bg-accent/20 hover:bg-accent text-white hover:text-primary font-inter font-semibold px-6 py-3 rounded-lg transition-all duration-300 border border-accent/30 hover:border-accent"
+        className="inline-flex items-center bg-accent/20 hover:bg-accent text-white hover:text-gray-900 font-inter font-semibold px-6 py-3 rounded-lg transition-all duration-300 border border-accent/30 hover:border-accent"
       >
         {ctaText}
         <svg 
