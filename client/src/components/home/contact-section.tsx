@@ -149,7 +149,7 @@ export function ContactSection() {
               </div>
               
               <div className="mb-6">
-                <label htmlFor="message" className="block mb-2 font-inter font-medium text-white">Tell Us About Your Needs <span className="text-gray-400 font-light">(Optional)</span></label>
+                <label htmlFor="message" className="block mb-2 font-inter font-medium text-white">Have any automation ideas in mind? Share them here <span className="text-gray-400 font-light">(Optional)</span></label>
                 <textarea 
                   {...form.register("message")}
                   id="message" 
