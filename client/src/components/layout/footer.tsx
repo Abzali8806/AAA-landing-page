@@ -1,14 +1,15 @@
 import { Link } from "wouter";
 import { 
-  MapPin, 
-  Mail, 
-  Phone,
   Linkedin,
   Twitter,
   Facebook,
-  Instagram
+  Instagram,
+  Zap,
+  ArrowUpRight,
+  Sparkles
 } from "lucide-react";
 import { TechPattern } from "@/components/ui/tech-pattern";
+import { scrollToElement } from "@/lib/utils";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -29,63 +30,101 @@ export function Footer() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#112340] via-transparent to-transparent z-0"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mb-8 sm:mb-10 lg:mb-12">
-          <div className="text-center sm:text-left">
-            <h4 className="text-lg sm:text-xl font-inter font-bold mb-4 sm:mb-6 text-white">
-              Opti<span className="text-accent">Flows</span>
-            </h4>
-            <p className="font-roboto font-light mb-4 sm:mb-6 text-gray-300 text-sm sm:text-base">
-              Streamlining business operations through intelligent automation and process optimization.
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
+          {/* Brand Section */}
+          <div className="text-center lg:text-left">
+            <div className="flex items-center justify-center lg:justify-start mb-6">
+              <div className="bg-accent/20 backdrop-blur-sm rounded-full p-3 mr-4">
+                <Zap className="text-accent" size={32} />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-inter font-bold text-white">
+                Opti<span className="text-accent">Flows</span>
+              </h3>
+            </div>
+            <p className="font-roboto font-light mb-8 text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Transform your business with cutting-edge workflow automation. We turn complexity into simplicity, 
+              helping organizations unlock their full potential through intelligent process optimization.
             </p>
-            <div className="flex space-x-4 justify-center sm:justify-start">
+            
+            {/* Feature Badges */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
+              <div className="bg-accent/10 backdrop-blur-sm rounded-full px-4 py-2 border border-accent/30">
+                <div className="flex items-center">
+                  <Sparkles className="text-accent mr-2" size={16} />
+                  <span className="text-accent font-medium text-sm">AI-Powered</span>
+                </div>
+              </div>
+              <div className="bg-accent/10 backdrop-blur-sm rounded-full px-4 py-2 border border-accent/30">
+                <span className="text-accent font-medium text-sm">Custom Solutions</span>
+              </div>
+              <div className="bg-accent/10 backdrop-blur-sm rounded-full px-4 py-2 border border-accent/30">
+                <span className="text-accent font-medium text-sm">24/7 Support</span>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex space-x-4 justify-center lg:justify-start">
               <a 
                 href="#" 
-                className="text-accent hover:text-highlight transition-colors duration-300"
+                className="bg-gray-800/50 hover:bg-accent/20 backdrop-blur-sm rounded-lg p-3 border border-gray-700/50 hover:border-accent/30 transition-all duration-300 group"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={18} />
+                <Linkedin className="text-gray-400 group-hover:text-accent transition-colors duration-300" size={20} />
               </a>
               <a 
                 href="#" 
-                className="text-accent hover:text-highlight transition-colors duration-300"
+                className="bg-gray-800/50 hover:bg-accent/20 backdrop-blur-sm rounded-lg p-3 border border-gray-700/50 hover:border-accent/30 transition-all duration-300 group"
                 aria-label="Twitter"
               >
-                <Twitter size={18} />
+                <Twitter className="text-gray-400 group-hover:text-accent transition-colors duration-300" size={20} />
               </a>
               <a 
                 href="#" 
-                className="text-accent hover:text-highlight transition-colors duration-300"
+                className="bg-gray-800/50 hover:bg-accent/20 backdrop-blur-sm rounded-lg p-3 border border-gray-700/50 hover:border-accent/30 transition-all duration-300 group"
                 aria-label="Facebook"
               >
-                <Facebook size={18} />
+                <Facebook className="text-gray-400 group-hover:text-accent transition-colors duration-300" size={20} />
               </a>
               <a 
                 href="#" 
-                className="text-accent hover:text-highlight transition-colors duration-300"
+                className="bg-gray-800/50 hover:bg-accent/20 backdrop-blur-sm rounded-lg p-3 border border-gray-700/50 hover:border-accent/30 transition-all duration-300 group"
                 aria-label="Instagram"
               >
-                <Instagram size={18} />
+                <Instagram className="text-gray-400 group-hover:text-accent transition-colors duration-300" size={20} />
               </a>
             </div>
           </div>
           
-          <div className="text-center sm:text-left">
-            <h4 className="text-lg sm:text-xl font-inter font-bold mb-4 sm:mb-6 text-white">Quick Links</h4>
-            <ul className="space-y-2 sm:space-y-3 font-roboto font-light">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <a 
-                    href={link.href} 
-                    className="text-gray-300 hover:text-accent transition-colors duration-300 text-sm sm:text-base"
-                  >
-                    {link.label}
-                  </a>
-                </li>
+          {/* Navigation Section */}
+          <div className="text-center lg:text-left">
+            <h4 className="text-xl sm:text-2xl font-inter font-bold mb-8 text-white flex items-center justify-center lg:justify-start">
+              <span>Quick Navigation</span>
+              <ArrowUpRight className="text-accent ml-2" size={24} />
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {quickLinks.map((link, index) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToElement(link.href.substring(1))}
+                  className="group bg-gray-800/50 hover:bg-accent/20 backdrop-blur-sm rounded-xl p-5 border border-gray-700/50 hover:border-accent/30 transition-all duration-300 text-left"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-white font-medium group-hover:text-accent transition-colors duration-300 text-base">
+                      {link.label}
+                    </span>
+                    <ArrowUpRight className="text-gray-400 group-hover:text-accent transition-all duration-300 transform group-hover:scale-110" size={18} />
+                  </div>
+                  <div className="text-gray-400 text-sm mt-2 opacity-80">
+                    {index === 0 && "Explore our automation services"}
+                    {index === 1 && "Learn about our mission"}
+                    {index === 2 && "View our success stories"}
+                    {index === 3 && "Read client feedback"}
+                    {index === 4 && "Get in touch with us"}
+                  </div>
+                </button>
               ))}
-            </ul>
+            </div>
           </div>
-          
-
         </div>
         
         <div className="border-t border-gray-700/50 pt-6 sm:pt-8">
