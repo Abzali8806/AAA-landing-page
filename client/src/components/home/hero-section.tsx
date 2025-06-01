@@ -51,7 +51,7 @@ export function HeroSection() {
           </motion.div>
           
           <motion.div 
-            className="hidden xl:block order-1 xl:order-2 relative"
+            className="hero-image-850 relative"
             variants={float}
             initial="hidden"
             animate="visible"
