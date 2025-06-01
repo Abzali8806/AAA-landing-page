@@ -41,7 +41,7 @@ export function TestimonialsSection() {
   }, [testimonials.length]);
 
   return (
-    <section id="testimonials" className="py-20 bg-gradient-to-b from-[#1b3553] to-[#132846] relative">
+    <section id="testimonials" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#1b3553] to-[#132846] relative">
       <div className="absolute inset-0 section-gradient"></div>
       {/* Create a tech pattern overlay with some opacity */}
       <div 
@@ -55,18 +55,18 @@ export function TestimonialsSection() {
       ></div>
       <TechPattern className="opacity-30" />
       
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 relative z-10">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          <h2 className="text-3xl md:text-4xl font-inter font-bold mb-4 text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-bold mb-4 text-white">
             Client <span className="text-accent">Testimonials</span>
           </h2>
-          <p className="text-xl max-w-3xl mx-auto font-roboto font-light text-gray-200">
+          <p className="text-lg sm:text-xl max-w-3xl mx-auto font-roboto font-light text-gray-200 px-4">
             Don't just take our word for it. Here's what our clients have to say about working with OptiFlows.
           </p>
         </motion.div>

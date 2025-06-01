@@ -29,28 +29,28 @@ export function CaseStudiesSection() {
   ];
 
   return (
-    <section id="case-studies" className="py-20 bg-gradient-to-b from-[#2d5277] to-[#1b3553] relative">
+    <section id="case-studies" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#2d5277] to-[#1b3553] relative">
       <div className="absolute inset-0 section-gradient"></div>
       <TechPattern className="opacity-40" />
       
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          <h2 className="text-3xl md:text-4xl font-inter font-bold mb-4 text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-bold mb-4 text-white">
             Our <span className="text-accent">Case Studies</span>
           </h2>
-          <p className="text-xl max-w-3xl mx-auto font-roboto font-light text-gray-200">
+          <p className="text-lg sm:text-xl max-w-3xl mx-auto font-roboto font-light text-gray-200 px-4">
             See how we've helped businesses across various industries achieve operational excellence.
           </p>
         </motion.div>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -70,7 +70,7 @@ export function CaseStudiesSection() {
         </motion.div>
         
         <motion.div 
-          className="text-center mt-12"
+          className="text-center mt-8 sm:mt-12"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -78,7 +78,7 @@ export function CaseStudiesSection() {
         >
           <a 
             href="#contact" 
-            className="border-2 border-accent/80 text-white hover:text-highlight hover:border-highlight font-inter font-medium px-8 py-3 rounded-md transition-all duration-300 inline-block hover:bg-accent/10"
+            className="border-2 border-accent/80 text-white hover:text-highlight hover:border-highlight font-inter font-medium px-6 sm:px-8 py-3 rounded-md transition-all duration-300 inline-block hover:bg-accent/10 text-center w-full sm:w-auto max-w-xs sm:max-w-none"
           >
             View All Case Studies
           </a>

@@ -65,36 +65,36 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-[#132846] to-[#173148] relative">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#132846] to-[#173148] relative">
       <div className="absolute inset-0 section-gradient"></div>
       <TechPattern className="opacity-40" />
       
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          <h2 className="text-3xl md:text-4xl font-inter font-bold mb-4 text-white">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-bold mb-4 text-white">
             Get In <span className="text-accent">Touch</span>
           </h2>
-          <p className="text-xl max-w-3xl mx-auto font-roboto font-light text-gray-200">
+          <p className="text-lg sm:text-xl max-w-3xl mx-auto font-roboto font-light text-gray-200 px-4">
             Ready to streamline your operations? Reach out to us to discuss how we can help optimize your workflows.
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <motion.div 
-            className="bg-white/5 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-accent/10"
+            className="bg-white/5 backdrop-blur-sm rounded-xl p-6 sm:p-8 shadow-lg border border-accent/10"
             variants={slideInLeft}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
           >
             <form onSubmit={form.handleSubmit(onSubmit)} id="contact-form">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
                 <div>
                   <label htmlFor="name" className="block mb-2 font-inter font-medium text-white">Name</label>
                   <input 
