@@ -94,7 +94,7 @@ export function Footer() {
               </li>
               <li className="flex items-center justify-center sm:justify-start">
                 <Phone className="text-accent mr-3 flex-shrink-0" size={18} />
-                <span className="text-gray-300 text-sm sm:text-base">+44 (0) 20 1234 5678</span>
+                <span className="text-gray-300 text-sm sm:text-base">+447389795588</span>
               </li>
             </ul>
           </div>

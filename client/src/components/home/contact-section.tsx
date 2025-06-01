@@ -224,7 +224,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-inter font-medium text-accent mb-1">Phone</h4>
-                    <p className="font-roboto font-light text-gray-200">+44 (0) 20 1234 5678</p>
+                    <p className="font-roboto font-light text-gray-200">+447389795588</p>
                   </div>
                 </div>
               </div>
