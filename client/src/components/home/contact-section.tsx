@@ -214,7 +214,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-inter font-medium text-accent mb-1">Email</h4>
-                    <p className="font-roboto font-light text-gray-200">info@optiflows.co.uk</p>
+                    <p className="font-roboto font-light text-gray-200">info@optiflowsai.com</p>
                   </div>
                 </div>
                 

@@ -90,7 +90,7 @@ export function Footer() {
             <ul className="space-y-2 sm:space-y-3 font-roboto font-light">
               <li className="flex items-center justify-center sm:justify-start">
                 <Mail className="text-accent mr-3 flex-shrink-0" size={18} />
-                <span className="text-gray-300 text-sm sm:text-base break-all">info@optiflows.co.uk</span>
+                <span className="text-gray-300 text-sm sm:text-base break-all">info@optiflowsai.com</span>
               </li>
               <li className="flex items-center justify-center sm:justify-start">
                 <Phone className="text-accent mr-3 flex-shrink-0" size={18} />
