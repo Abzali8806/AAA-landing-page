@@ -29,10 +29,10 @@ export function Footer() {
       <TechPattern className="opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#112340] via-transparent to-transparent z-0"></div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-12">
           {/* Brand Section */}
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left lg:col-span-2">
             <div className="flex items-center justify-center lg:justify-start mb-6">
               <div className="bg-accent/20 backdrop-blur-sm rounded-full p-3 mr-4">
                 <Zap className="text-accent" size={32} />
@@ -41,7 +41,7 @@ export function Footer() {
                 Opti<span className="text-accent">Flows</span>
               </h3>
             </div>
-            <p className="font-roboto font-light mb-8 text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="font-roboto font-light mb-8 text-gray-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto lg:mx-0">
               Transform your business with cutting-edge workflow automation. We turn complexity into simplicity, 
               helping organizations unlock their full potential through intelligent process optimization.
             </p>
