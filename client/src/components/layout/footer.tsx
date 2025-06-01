@@ -97,33 +97,21 @@ export function Footer() {
           
           {/* Navigation Section */}
           <div className="text-center lg:text-left">
-            <h4 className="text-xl sm:text-2xl font-inter font-bold mb-8 text-white flex items-center justify-center lg:justify-start">
-              <span>Quick Navigation</span>
-              <ArrowUpRight className="text-accent ml-2" size={24} />
+            <h4 className="text-xl sm:text-2xl font-inter font-bold mb-8 text-white">
+              Quick Links
             </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {quickLinks.map((link, index) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToElement(link.href.substring(1))}
-                  className="group bg-gray-800/50 hover:bg-accent/20 backdrop-blur-sm rounded-xl p-5 border border-gray-700/50 hover:border-accent/30 transition-all duration-300 text-left"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-white font-medium group-hover:text-accent transition-colors duration-300 text-base">
-                      {link.label}
-                    </span>
-                    <ArrowUpRight className="text-gray-400 group-hover:text-accent transition-all duration-300 transform group-hover:scale-110" size={18} />
-                  </div>
-                  <div className="text-gray-400 text-sm mt-2 opacity-80">
-                    {index === 0 && "Explore our automation services"}
-                    {index === 1 && "Learn about our mission"}
-                    {index === 2 && "View our success stories"}
-                    {index === 3 && "Read client feedback"}
-                    {index === 4 && "Get in touch with us"}
-                  </div>
-                </button>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <button
+                    onClick={() => scrollToElement(link.href.substring(1))}
+                    className="text-gray-300 hover:text-accent transition-colors duration-300 text-base font-light hover:underline"
+                  >
+                    {link.label}
+                  </button>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
         
