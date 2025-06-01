@@ -21,13 +21,7 @@ export function Footer() {
     { href: "#contact", label: "Contact" }
   ];
 
-  const serviceLinks = [
-    { href: "#", label: "Workflow Automation" },
-    { href: "#", label: "Process Optimization" },
-    { href: "#", label: "Software Integration" },
-    { href: "#", label: "Data Analytics" },
-    { href: "#", label: "Digital Transformation" }
-  ];
+
 
   return (
     <footer className="bg-[#112340] py-12 relative">
@@ -35,7 +29,7 @@ export function Footer() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#112340] via-transparent to-transparent z-0"></div>
       
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <div>
             <h4 className="text-xl font-inter font-bold mb-6 text-white">
               Opti<span className="text-accent">Flows</span>
@@ -80,22 +74,6 @@ export function Footer() {
             <ul className="space-y-3 font-roboto font-light">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a 
-                    href={link.href} 
-                    className="text-gray-300 hover:text-accent transition-colors duration-300"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-xl font-inter font-bold mb-6 text-white">Services</h4>
-            <ul className="space-y-3 font-roboto font-light">
-              {serviceLinks.map((link, index) => (
-                <li key={index}>
                   <a 
                     href={link.href} 
                     className="text-gray-300 hover:text-accent transition-colors duration-300"
