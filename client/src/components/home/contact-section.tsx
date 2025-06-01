@@ -13,9 +13,9 @@ import { useMutation } from "@tanstack/react-query";
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
+  phone: z.string().min(10, { message: "Please enter a valid phone number" }),
   company: z.string().optional(),
-  service: z.string().min(1, { message: "Please select a service" }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters" }),
+  message: z.string().min(10, { message: "Please tell us about your workflow automation needs, pain points, or specific ideas" }),
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
@@ -29,8 +29,8 @@ export function ContactSection() {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
       company: "",
-      service: "",
       message: "",
     },
   });
@@ -123,45 +123,40 @@ export function ContactSection() {
                 </div>
               </div>
               
-              <div className="mb-6">
-                <label htmlFor="company" className="block mb-2 font-inter font-medium text-white">Company</label>
-                <input 
-                  {...form.register("company")}
-                  type="text" 
-                  id="company" 
-                  className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-accent/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white"
-                  placeholder="Your company" 
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label htmlFor="phone" className="block mb-2 font-inter font-medium text-white">Phone Number</label>
+                  <input 
+                    {...form.register("phone")}
+                    type="tel" 
+                    id="phone" 
+                    className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border ${form.formState.errors.phone ? 'border-destructive' : 'border-accent/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white`}
+                    placeholder="Your phone number" 
+                  />
+                  {form.formState.errors.phone && (
+                    <p className="text-destructive text-sm mt-1">{form.formState.errors.phone.message}</p>
+                  )}
+                </div>
+                <div>
+                  <label htmlFor="company" className="block mb-2 font-inter font-medium text-white">Company</label>
+                  <input 
+                    {...form.register("company")}
+                    type="text" 
+                    id="company" 
+                    className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-accent/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white"
+                    placeholder="Your company" 
+                  />
+                </div>
               </div>
               
               <div className="mb-6">
-                <label htmlFor="service" className="block mb-2 font-inter font-medium text-white">Service You're Interested In</label>
-                <select 
-                  {...form.register("service")}
-                  id="service" 
-                  className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border ${form.formState.errors.service ? 'border-destructive' : 'border-accent/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white`}
-                >
-                  <option value="" disabled className="bg-darkbg text-white">Select a service</option>
-                  <option value="workflow-automation" className="bg-darkbg text-white">Workflow Automation</option>
-                  <option value="process-optimization" className="bg-darkbg text-white">Business Process Optimization</option>
-                  <option value="software-integration" className="bg-darkbg text-white">Custom Software Integration</option>
-                  <option value="data-analytics" className="bg-darkbg text-white">Data Analytics Solutions</option>
-                  <option value="digital-transformation" className="bg-darkbg text-white">Digital Transformation Consulting</option>
-                  <option value="security-compliance" className="bg-darkbg text-white">Security & Compliance</option>
-                </select>
-                {form.formState.errors.service && (
-                  <p className="text-destructive text-sm mt-1">{form.formState.errors.service.message}</p>
-                )}
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="message" className="block mb-2 font-inter font-medium text-white">Message</label>
+                <label htmlFor="message" className="block mb-2 font-inter font-medium text-white">Tell Us About Your Needs</label>
                 <textarea 
                   {...form.register("message")}
                   id="message" 
-                  rows={4} 
+                  rows={5} 
                   className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border ${form.formState.errors.message ? 'border-destructive' : 'border-accent/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white`}
-                  placeholder="Tell us about your project" 
+                  placeholder="Describe your workflow automation needs, current pain points, or specific ideas you have in mind. The more detail you provide, the better we can help you." 
                 />
                 {form.formState.errors.message && (
                   <p className="text-destructive text-sm mt-1">{form.formState.errors.message.message}</p>
