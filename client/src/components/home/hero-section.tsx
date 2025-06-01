@@ -1,15 +1,12 @@
 import { motion } from "framer-motion";
 import { fadeUp, textEntrance, float } from "@/lib/animations";
-import { ParticleBackground } from "@/components/ui/particle-background";
+import { DynamicHeroBackground } from "@/components/ui/dynamic-hero-background";
 import { ChevronDown } from "lucide-react";
-import { TechPattern } from "@/components/ui/tech-pattern";
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#1a2b55] via-[#2a5282] to-[#358f8a]/80">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1a2b55]/40 to-transparent z-0"></div>
-      <TechPattern className="opacity-40" />
-      <ParticleBackground count={70} />
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155]">
+      <DynamicHeroBackground elementCount={80} lineCount={20} />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center min-h-[80vh] lg:min-h-[85vh]">
