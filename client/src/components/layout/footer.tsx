@@ -85,19 +85,7 @@ export function Footer() {
             </ul>
           </div>
           
-          <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
-            <h4 className="text-lg sm:text-xl font-inter font-bold mb-4 sm:mb-6 text-white">Contact</h4>
-            <ul className="space-y-2 sm:space-y-3 font-roboto font-light">
-              <li className="flex items-center justify-center sm:justify-start">
-                <Mail className="text-accent mr-3 flex-shrink-0" size={18} />
-                <span className="text-gray-300 text-sm sm:text-base break-all">info@optiflowsai.com</span>
-              </li>
-              <li className="flex items-center justify-center sm:justify-start">
-                <Phone className="text-accent mr-3 flex-shrink-0" size={18} />
-                <span className="text-gray-300 text-sm sm:text-base">+447389795588</span>
-              </li>
-            </ul>
-          </div>
+
         </div>
         
         <div className="border-t border-gray-700/50 pt-6 sm:pt-8">
