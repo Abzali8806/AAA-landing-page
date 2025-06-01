@@ -105,12 +105,9 @@ export function Footer() {
                 <li key={link.href}>
                   <button
                     onClick={() => scrollToElement(link.href.substring(1))}
-                    className="group relative text-gray-300 hover:text-accent transition-all duration-300 text-base font-medium py-2 px-4 rounded-lg hover:bg-accent/10 transform hover:translate-x-2"
+                    className="text-gray-300 hover:text-accent transition-colors duration-300 text-base font-medium hover:underline"
                   >
-                    <span className="flex items-center">
-                      <span className="w-1.5 h-1.5 bg-accent/60 rounded-full mr-3 group-hover:bg-accent transition-colors duration-300"></span>
-                      {link.label}
-                    </span>
+                    {link.label}
                   </button>
                 </li>
               ))}
