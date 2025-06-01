@@ -123,30 +123,29 @@ export function ContactSection() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="phone" className="block mb-2 font-inter font-medium text-white">Phone Number</label>
-                  <input 
-                    {...form.register("phone")}
-                    type="tel" 
-                    id="phone" 
-                    className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border ${form.formState.errors.phone ? 'border-destructive' : 'border-accent/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white`}
-                    placeholder="Your phone number" 
-                  />
-                  {form.formState.errors.phone && (
-                    <p className="text-destructive text-sm mt-1">{form.formState.errors.phone.message}</p>
-                  )}
-                </div>
-                <div>
-                  <label htmlFor="company" className="block mb-2 font-inter font-medium text-white">Company</label>
-                  <input 
-                    {...form.register("company")}
-                    type="text" 
-                    id="company" 
-                    className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-accent/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white"
-                    placeholder="Your company" 
-                  />
-                </div>
+              <div className="mb-6">
+                <label htmlFor="phone" className="block mb-2 font-inter font-medium text-white">Phone Number</label>
+                <input 
+                  {...form.register("phone")}
+                  type="tel" 
+                  id="phone" 
+                  className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border ${form.formState.errors.phone ? 'border-destructive' : 'border-accent/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white`}
+                  placeholder="Your phone number" 
+                />
+                {form.formState.errors.phone && (
+                  <p className="text-destructive text-sm mt-1">{form.formState.errors.phone.message}</p>
+                )}
+              </div>
+              
+              <div className="mb-6">
+                <label htmlFor="company" className="block mb-2 font-inter font-medium text-white">Company</label>
+                <input 
+                  {...form.register("company")}
+                  type="text" 
+                  id="company" 
+                  className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-accent/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white"
+                  placeholder="Your company" 
+                />
               </div>
               
               <div className="mb-6">
