@@ -52,13 +52,13 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-white font-inter font-bold text-2xl tracking-tight">
+            <span className="text-white font-inter font-bold text-xl sm:text-2xl tracking-tight">
               Opti<span className="text-accent">Flows</span>
             </span>
           </Link>
           
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)}
               className="text-white hover:text-accent focus:outline-none"
@@ -69,12 +69,12 @@ export function Navbar() {
           </div>
           
           {/* Desktop navigation */}
-          <ul className="hidden md:flex space-x-8 font-inter font-medium">
+          <ul className="hidden lg:flex space-x-6 xl:space-x-8 font-inter font-medium">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a 
                   href={link.href} 
-                  className="text-white hover:text-accent transition-all duration-300 relative after:absolute after:bottom-0 after:left-0 after:bg-accent after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300"
+                  className="text-white hover:text-accent transition-all duration-300 relative after:absolute after:bottom-0 after:left-0 after:bg-accent after:h-0.5 after:w-0 hover:after:w-full after:transition-all after:duration-300 text-sm xl:text-base"
                 >
                   {link.label}
                 </a>
@@ -84,7 +84,7 @@ export function Navbar() {
           
           <a 
             href="#contact" 
-            className="hidden md:block bg-accent hover:bg-accent/90 text-gray-900 font-inter font-medium px-5 py-2 rounded-md transition-all duration-300 shadow-lg shadow-accent/20 hover:scale-105"
+            className="hidden lg:block bg-accent hover:bg-accent/90 text-white font-inter font-medium px-4 xl:px-5 py-2 rounded-md transition-all duration-300 shadow-lg shadow-accent/20 hover:scale-105 text-sm xl:text-base"
           >
             Get Started
           </a>
@@ -99,7 +99,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#1a2b55]/95 backdrop-blur-sm shadow-lg"
+            className="lg:hidden bg-[#1a2b55]/95 backdrop-blur-sm shadow-lg"
           >
             <ul className="pt-2 pb-4 px-4 font-inter font-medium">
               {navLinks.map((link) => (
@@ -116,7 +116,7 @@ export function Navbar() {
               <li className="pt-2">
                 <a 
                   href="#contact" 
-                  className="block bg-accent hover:bg-accent/90 text-gray-900 font-inter font-medium px-5 py-2 rounded-md text-center transition-all duration-300 shadow-md shadow-accent/20"
+                  className="block bg-accent hover:bg-accent/90 text-white font-inter font-medium px-5 py-2 rounded-md text-center transition-all duration-300 shadow-md shadow-accent/20"
                   onClick={() => setIsOpen(false)}
                 >
                   Get Started
