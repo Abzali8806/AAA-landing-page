@@ -15,7 +15,7 @@ const contactFormSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().min(10, { message: "Please enter a valid phone number" }),
   company: z.string().optional(),
-  message: z.string().min(10, { message: "Please tell us about your workflow automation needs, pain points, or specific ideas" }),
+  message: z.string().optional(),
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
@@ -149,7 +149,7 @@ export function ContactSection() {
               </div>
               
               <div className="mb-6">
-                <label htmlFor="message" className="block mb-2 font-inter font-medium text-white">Tell Us About Your Needs</label>
+                <label htmlFor="message" className="block mb-2 font-inter font-medium text-white">Tell Us About Your Needs <span className="text-gray-400 font-light">(Optional)</span></label>
                 <textarea 
                   {...form.register("message")}
                   id="message" 
