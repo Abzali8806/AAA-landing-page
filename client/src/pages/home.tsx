@@ -4,8 +4,6 @@ import { Footer } from "@/components/layout/footer";
 import { HeroSection } from "@/components/home/hero-section";
 import { ServicesSection } from "@/components/home/services-section";
 import { AboutSection } from "@/components/home/about-section";
-import { CaseStudiesSection } from "@/components/home/case-studies-section";
-import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { ContactSection } from "@/components/home/contact-section";
 
 export default function Home() {
@@ -21,8 +19,6 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
         <AboutSection />
-        <CaseStudiesSection />
-        <TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />
