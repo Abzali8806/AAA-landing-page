@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 export function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155]">
-      <DynamicHeroBackground elementCount={40} lineCount={8} />
+      <DynamicHeroBackground elementCount={25} />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10 flex items-center justify-center min-h-screen">
         <div className="hero-grid-930 gap-8 items-center justify-center w-full">
