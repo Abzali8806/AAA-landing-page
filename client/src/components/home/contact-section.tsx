@@ -1,13 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { fadeUp, slideInLeft, slideInRight } from "@/lib/animations";
 import { TechPattern } from "@/components/ui/tech-pattern";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MapPin, Mail, Phone, Linkedin, Twitter, Facebook, Instagram, ChevronDown } from "lucide-react";
+import { MapPin, Mail, Phone, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
 
 const contactFormSchema = z.object({
@@ -15,7 +14,6 @@ const contactFormSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().min(10, { message: "Please enter a valid phone number" }),
   company: z.string().optional(),
-  country: z.string().min(1, { message: "Please select your country" }),
   message: z.string().optional(),
 });
 
@@ -88,11 +86,7 @@ const countries = [
 export function ContactSection() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [detectedCountry, setDetectedCountry] = useState<string | null>(null);
-  const [searchTerm, setSearchTerm] = useState("");
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const searchInputRef = useRef<HTMLInputElement>(null);
   
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -101,7 +95,6 @@ export function ContactSection() {
       email: "",
       phone: "",
       company: "",
-      country: "",
       message: "",
     },
   });
@@ -115,12 +108,6 @@ export function ContactSection() {
         if (data.country_code) {
           const detectedCountryCode = data.country_code.toUpperCase();
           setDetectedCountry(detectedCountryCode);
-          
-          // Check if detected country exists in our list
-          const countryExists = countries.find(country => country.code === detectedCountryCode);
-          if (countryExists) {
-            form.setValue('country', detectedCountryCode);
-          }
         }
       } catch (error) {
         console.log('Could not detect user location');
@@ -128,43 +115,17 @@ export function ContactSection() {
     };
 
     detectUserCountry();
-  }, [form]);
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false);
-        setSearchTerm("");
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
   }, []);
 
-  // Focus search input when dropdown opens
-  useEffect(() => {
-    if (isDropdownOpen && searchInputRef.current) {
-      searchInputRef.current.focus();
-    }
-  }, [isDropdownOpen]);
-
-  // Filter countries based on search term
-  const filteredCountries = countries.filter(country =>
-    country.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-  
   const contactMutation = useMutation({
     mutationFn: async (formData: ContactFormValues) => {
-      // Add country name to the submission data
-      const selectedCountry = countries.find(c => c.code === formData.country);
+      // Add auto-detected country data to the submission
+      const selectedCountry = countries.find(c => c.code === detectedCountry);
       const submissionData = {
         ...formData,
-        countryName: selectedCountry?.name || formData.country,
-        detectedFromIP: detectedCountry === formData.country
+        countryCode: detectedCountry,
+        countryName: selectedCountry?.name || 'Unknown',
+        detectedFromIP: true
       };
 
       const response = await fetch("https://hook.eu2.make.com/1bebr3t96at37j2im2viq9r7itn6aweo", {
@@ -295,83 +256,6 @@ export function ContactSection() {
                   className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-accent/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white"
                   placeholder="Your company" 
                 />
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="country" className="block mb-2 font-inter font-medium text-white">
-                  Country of Operation
-                </label>
-                <div className="relative" ref={dropdownRef}>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setIsDropdownOpen(!isDropdownOpen);
-                      if (!isDropdownOpen) {
-                        setSearchTerm("");
-                      }
-                    }}
-                    className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border ${form.formState.errors.country ? 'border-destructive' : 'border-accent/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white text-left flex items-center justify-between`}
-                  >
-                    <span className="flex items-center">
-                      {form.watch('country') ? (
-                        <>
-                          <span className="mr-3 text-lg">
-                            {countries.find(c => c.code === form.watch('country'))?.flag}
-                          </span>
-                          {countries.find(c => c.code === form.watch('country'))?.name}
-                        </>
-                      ) : (
-                        <span className="text-gray-400">Select your country of operation</span>
-                      )}
-                    </span>
-                    <ChevronDown 
-                      className={`w-5 h-5 transition-transform duration-200 ${
-                        isDropdownOpen ? 'rotate-180' : ''
-                      }`} 
-                    />
-                  </button>
-                  
-                  {isDropdownOpen && (
-                    <div className="absolute z-50 w-full mt-1 bg-gray-800/95 backdrop-blur-sm border border-accent/20 rounded-md shadow-lg max-h-60 overflow-hidden">
-                      <div className="p-3 border-b border-gray-700/30">
-                        <input
-                          ref={searchInputRef}
-                          type="text"
-                          placeholder="Search countries..."
-                          value={searchTerm}
-                          onChange={(e) => setSearchTerm(e.target.value)}
-                          className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-accent/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white placeholder-gray-400 text-sm"
-                        />
-                      </div>
-                      <div className="max-h-48 overflow-y-auto">
-                        {filteredCountries.length > 0 ? (
-                          filteredCountries.map((country) => (
-                            <button
-                              key={country.code}
-                              type="button"
-                              onClick={() => {
-                                form.setValue('country', country.code);
-                                setIsDropdownOpen(false);
-                                setSearchTerm("");
-                              }}
-                              className="w-full px-4 py-3 text-left hover:bg-accent/20 transition-colors duration-200 flex items-center text-white border-b border-gray-700/30 last:border-b-0"
-                            >
-                              <span className="mr-3 text-lg">{country.flag}</span>
-                              {country.name}
-                            </button>
-                          ))
-                        ) : (
-                          <div className="px-4 py-3 text-gray-400 text-sm">
-                            No countries found matching "{searchTerm}"
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-                {form.formState.errors.country && (
-                  <p className="text-destructive text-sm mt-1">{form.formState.errors.country.message}</p>
-                )}
               </div>
               
               <div className="mb-6">
