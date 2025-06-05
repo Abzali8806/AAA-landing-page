@@ -90,7 +90,9 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [detectedCountry, setDetectedCountry] = useState<string | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
   
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -133,6 +135,7 @@ export function ContactSection() {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsDropdownOpen(false);
+        setSearchTerm("");
       }
     };
 
@@ -141,6 +144,18 @@ export function ContactSection() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  // Focus search input when dropdown opens
+  useEffect(() => {
+    if (isDropdownOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [isDropdownOpen]);
+
+  // Filter countries based on search term
+  const filteredCountries = countries.filter(country =>
+    country.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   
   const contactMutation = useMutation({
     mutationFn: async (formData: ContactFormValues) => {
@@ -295,7 +310,12 @@ export function ContactSection() {
                 <div className="relative" ref={dropdownRef}>
                   <button
                     type="button"
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    onClick={() => {
+                      setIsDropdownOpen(!isDropdownOpen);
+                      if (!isDropdownOpen) {
+                        setSearchTerm("");
+                      }
+                    }}
                     className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border ${form.formState.errors.country ? 'border-destructive' : 'border-accent/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white text-left flex items-center justify-between`}
                   >
                     <span className="flex items-center">
@@ -318,21 +338,40 @@ export function ContactSection() {
                   </button>
                   
                   {isDropdownOpen && (
-                    <div className="absolute z-50 w-full mt-1 bg-gray-800/95 backdrop-blur-sm border border-accent/20 rounded-md shadow-lg max-h-60 overflow-y-auto">
-                      {countries.map((country) => (
-                        <button
-                          key={country.code}
-                          type="button"
-                          onClick={() => {
-                            form.setValue('country', country.code);
-                            setIsDropdownOpen(false);
-                          }}
-                          className="w-full px-4 py-3 text-left hover:bg-accent/20 transition-colors duration-200 flex items-center text-white border-b border-gray-700/30 last:border-b-0"
-                        >
-                          <span className="mr-3 text-lg">{country.flag}</span>
-                          {country.name}
-                        </button>
-                      ))}
+                    <div className="absolute z-50 w-full mt-1 bg-gray-800/95 backdrop-blur-sm border border-accent/20 rounded-md shadow-lg max-h-60 overflow-hidden">
+                      <div className="p-3 border-b border-gray-700/30">
+                        <input
+                          ref={searchInputRef}
+                          type="text"
+                          placeholder="Search countries..."
+                          value={searchTerm}
+                          onChange={(e) => setSearchTerm(e.target.value)}
+                          className="w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-accent/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white placeholder-gray-400 text-sm"
+                        />
+                      </div>
+                      <div className="max-h-48 overflow-y-auto">
+                        {filteredCountries.length > 0 ? (
+                          filteredCountries.map((country) => (
+                            <button
+                              key={country.code}
+                              type="button"
+                              onClick={() => {
+                                form.setValue('country', country.code);
+                                setIsDropdownOpen(false);
+                                setSearchTerm("");
+                              }}
+                              className="w-full px-4 py-3 text-left hover:bg-accent/20 transition-colors duration-200 flex items-center text-white border-b border-gray-700/30 last:border-b-0"
+                            >
+                              <span className="mr-3 text-lg">{country.flag}</span>
+                              {country.name}
+                            </button>
+                          ))
+                        ) : (
+                          <div className="px-4 py-3 text-gray-400 text-sm">
+                            No countries found matching "{searchTerm}"
+                          </div>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>
