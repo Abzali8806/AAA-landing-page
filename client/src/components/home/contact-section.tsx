@@ -37,7 +37,19 @@ export function ContactSection() {
   
   const contactMutation = useMutation({
     mutationFn: async (formData: ContactFormValues) => {
-      return await apiRequest("POST", "/api/contact", formData);
+      const response = await fetch("https://hook.eu2.make.com/1bebr3t96at37j2im2viq9r7itn6aweo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+      
+      return response.json();
     },
     onSuccess: () => {
       toast({
