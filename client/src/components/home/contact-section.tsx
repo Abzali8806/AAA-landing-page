@@ -49,7 +49,14 @@ export function ContactSection() {
         throw new Error("Failed to send message");
       }
       
-      return response.json();
+      // Make.com webhooks often return plain text like "Accepted"
+      // So we'll handle both JSON and text responses
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        return response.json();
+      } else {
+        return response.text();
+      }
     },
     onSuccess: () => {
       toast({
