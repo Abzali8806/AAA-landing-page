@@ -164,7 +164,6 @@ export function ContactSection() {
       const submissionData = {
         ...formData,
         countryName: selectedCountry?.name || formData.country,
-        countryFlag: selectedCountry?.flag || '',
         detectedFromIP: detectedCountry === formData.country
       };
 
@@ -301,11 +300,6 @@ export function ContactSection() {
               <div className="mb-6">
                 <label htmlFor="country" className="block mb-2 font-inter font-medium text-white">
                   Country of Operation
-                  {detectedCountry && (
-                    <span className="text-accent/70 text-sm font-light ml-2">
-                      (Auto-detected)
-                    </span>
-                  )}
                 </label>
                 <div className="relative" ref={dropdownRef}>
                   <button
