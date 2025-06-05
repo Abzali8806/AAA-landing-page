@@ -292,7 +292,7 @@ export function ContactSection() {
                     </span>
                   )}
                 </label>
-                <div className="relative">
+                <div className="relative" ref={dropdownRef}>
                   <button
                     type="button"
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
