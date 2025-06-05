@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { fadeUp, slideInLeft, slideInRight } from "@/lib/animations";
 import { TechPattern } from "@/components/ui/tech-pattern";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MapPin, Mail, Phone, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
+import { MapPin, Mail, Phone, Linkedin, Twitter, Facebook, Instagram, ChevronDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
@@ -15,14 +15,82 @@ const contactFormSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().min(10, { message: "Please enter a valid phone number" }),
   company: z.string().optional(),
+  country: z.string().min(1, { message: "Please select your country" }),
   message: z.string().optional(),
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
+// Country list with flags
+const countries = [
+  { code: "US", name: "United States", flag: "🇺🇸" },
+  { code: "GB", name: "United Kingdom", flag: "🇬🇧" },
+  { code: "CA", name: "Canada", flag: "🇨🇦" },
+  { code: "AU", name: "Australia", flag: "🇦🇺" },
+  { code: "DE", name: "Germany", flag: "🇩🇪" },
+  { code: "FR", name: "France", flag: "🇫🇷" },
+  { code: "IT", name: "Italy", flag: "🇮🇹" },
+  { code: "ES", name: "Spain", flag: "🇪🇸" },
+  { code: "NL", name: "Netherlands", flag: "🇳🇱" },
+  { code: "BE", name: "Belgium", flag: "🇧🇪" },
+  { code: "CH", name: "Switzerland", flag: "🇨🇭" },
+  { code: "AT", name: "Austria", flag: "🇦🇹" },
+  { code: "SE", name: "Sweden", flag: "🇸🇪" },
+  { code: "NO", name: "Norway", flag: "🇳🇴" },
+  { code: "DK", name: "Denmark", flag: "🇩🇰" },
+  { code: "FI", name: "Finland", flag: "🇫🇮" },
+  { code: "IE", name: "Ireland", flag: "🇮🇪" },
+  { code: "PT", name: "Portugal", flag: "🇵🇹" },
+  { code: "GR", name: "Greece", flag: "🇬🇷" },
+  { code: "PL", name: "Poland", flag: "🇵🇱" },
+  { code: "CZ", name: "Czech Republic", flag: "🇨🇿" },
+  { code: "HU", name: "Hungary", flag: "🇭🇺" },
+  { code: "RO", name: "Romania", flag: "🇷🇴" },
+  { code: "BG", name: "Bulgaria", flag: "🇧🇬" },
+  { code: "HR", name: "Croatia", flag: "🇭🇷" },
+  { code: "SI", name: "Slovenia", flag: "🇸🇮" },
+  { code: "SK", name: "Slovakia", flag: "🇸🇰" },
+  { code: "LT", name: "Lithuania", flag: "🇱🇹" },
+  { code: "LV", name: "Latvia", flag: "🇱🇻" },
+  { code: "EE", name: "Estonia", flag: "🇪🇪" },
+  { code: "JP", name: "Japan", flag: "🇯🇵" },
+  { code: "KR", name: "South Korea", flag: "🇰🇷" },
+  { code: "CN", name: "China", flag: "🇨🇳" },
+  { code: "IN", name: "India", flag: "🇮🇳" },
+  { code: "SG", name: "Singapore", flag: "🇸🇬" },
+  { code: "HK", name: "Hong Kong", flag: "🇭🇰" },
+  { code: "MY", name: "Malaysia", flag: "🇲🇾" },
+  { code: "TH", name: "Thailand", flag: "🇹🇭" },
+  { code: "ID", name: "Indonesia", flag: "🇮🇩" },
+  { code: "PH", name: "Philippines", flag: "🇵🇭" },
+  { code: "VN", name: "Vietnam", flag: "🇻🇳" },
+  { code: "TW", name: "Taiwan", flag: "🇹🇼" },
+  { code: "NZ", name: "New Zealand", flag: "🇳🇿" },
+  { code: "BR", name: "Brazil", flag: "🇧🇷" },
+  { code: "MX", name: "Mexico", flag: "🇲🇽" },
+  { code: "AR", name: "Argentina", flag: "🇦🇷" },
+  { code: "CL", name: "Chile", flag: "🇨🇱" },
+  { code: "CO", name: "Colombia", flag: "🇨🇴" },
+  { code: "PE", name: "Peru", flag: "🇵🇪" },
+  { code: "ZA", name: "South Africa", flag: "🇿🇦" },
+  { code: "EG", name: "Egypt", flag: "🇪🇬" },
+  { code: "NG", name: "Nigeria", flag: "🇳🇬" },
+  { code: "KE", name: "Kenya", flag: "🇰🇪" },
+  { code: "MA", name: "Morocco", flag: "🇲🇦" },
+  { code: "AE", name: "United Arab Emirates", flag: "🇦🇪" },
+  { code: "SA", name: "Saudi Arabia", flag: "🇸🇦" },
+  { code: "IL", name: "Israel", flag: "🇮🇱" },
+  { code: "TR", name: "Turkey", flag: "🇹🇷" },
+  { code: "RU", name: "Russia", flag: "🇷🇺" },
+  { code: "UA", name: "Ukraine", flag: "🇺🇦" }
+];
+
 export function ContactSection() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [detectedCountry, setDetectedCountry] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -31,18 +99,66 @@ export function ContactSection() {
       email: "",
       phone: "",
       company: "",
+      country: "",
       message: "",
     },
   });
+
+  // Detect user's country on component mount
+  useEffect(() => {
+    const detectUserCountry = async () => {
+      try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        if (data.country_code) {
+          const detectedCountryCode = data.country_code.toUpperCase();
+          setDetectedCountry(detectedCountryCode);
+          
+          // Check if detected country exists in our list
+          const countryExists = countries.find(country => country.code === detectedCountryCode);
+          if (countryExists) {
+            form.setValue('country', detectedCountryCode);
+          }
+        }
+      } catch (error) {
+        console.log('Could not detect user location');
+      }
+    };
+
+    detectUserCountry();
+  }, [form]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
   
   const contactMutation = useMutation({
     mutationFn: async (formData: ContactFormValues) => {
+      // Add country name to the submission data
+      const selectedCountry = countries.find(c => c.code === formData.country);
+      const submissionData = {
+        ...formData,
+        countryName: selectedCountry?.name || formData.country,
+        countryFlag: selectedCountry?.flag || '',
+        detectedFromIP: detectedCountry === formData.country
+      };
+
       const response = await fetch("https://hook.eu2.make.com/1bebr3t96at37j2im2viq9r7itn6aweo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(submissionData),
       });
       
       if (!response.ok) {
@@ -165,6 +281,64 @@ export function ContactSection() {
                   className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-accent/20 rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white"
                   placeholder="Your company" 
                 />
+              </div>
+              
+              <div className="mb-6">
+                <label htmlFor="country" className="block mb-2 font-inter font-medium text-white">
+                  Country of Operation
+                  {detectedCountry && (
+                    <span className="text-accent/70 text-sm font-light ml-2">
+                      (Auto-detected)
+                    </span>
+                  )}
+                </label>
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border ${form.formState.errors.country ? 'border-destructive' : 'border-accent/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-white text-left flex items-center justify-between`}
+                  >
+                    <span className="flex items-center">
+                      {form.watch('country') ? (
+                        <>
+                          <span className="mr-3 text-lg">
+                            {countries.find(c => c.code === form.watch('country'))?.flag}
+                          </span>
+                          {countries.find(c => c.code === form.watch('country'))?.name}
+                        </>
+                      ) : (
+                        <span className="text-gray-400">Select your country of operation</span>
+                      )}
+                    </span>
+                    <ChevronDown 
+                      className={`w-5 h-5 transition-transform duration-200 ${
+                        isDropdownOpen ? 'rotate-180' : ''
+                      }`} 
+                    />
+                  </button>
+                  
+                  {isDropdownOpen && (
+                    <div className="absolute z-50 w-full mt-1 bg-gray-800/95 backdrop-blur-sm border border-accent/20 rounded-md shadow-lg max-h-60 overflow-y-auto">
+                      {countries.map((country) => (
+                        <button
+                          key={country.code}
+                          type="button"
+                          onClick={() => {
+                            form.setValue('country', country.code);
+                            setIsDropdownOpen(false);
+                          }}
+                          className="w-full px-4 py-3 text-left hover:bg-accent/20 transition-colors duration-200 flex items-center text-white border-b border-gray-700/30 last:border-b-0"
+                        >
+                          <span className="mr-3 text-lg">{country.flag}</span>
+                          {country.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                {form.formState.errors.country && (
+                  <p className="text-destructive text-sm mt-1">{form.formState.errors.country.message}</p>
+                )}
               </div>
               
               <div className="mb-6">
