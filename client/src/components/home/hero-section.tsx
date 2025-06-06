@@ -55,21 +55,12 @@ export function HeroSection() {
               <span className="text-accent">AI-Powered Automation</span>
             </motion.h1>
             
-            {/* Sales Message */}
+            {/* Concise Sales Message */}
             <motion.p 
-              className="text-lg sm:text-xl text-gray-300 text-center mb-4 max-w-3xl"
+              className="text-lg sm:text-xl text-gray-300 text-center mb-8 max-w-2xl"
               variants={fadeUp}
             >
-              Stop wasting 40+ hours per week on repetitive tasks. Our intelligent workflow automation 
-              increases efficiency by <span className="text-accent font-semibold">300%</span> and cuts operational costs by up to <span className="text-accent font-semibold">60%</span>.
-            </motion.p>
-            
-            {/* Value Proposition */}
-            <motion.p 
-              className="text-base sm:text-lg text-gray-400 text-center mb-8 max-w-2xl"
-              variants={fadeUp}
-            >
-              Join 500+ businesses already saving thousands of hours monthly with our proven automation solutions.
+              Increase efficiency by <span className="text-accent font-semibold">300%</span> and cut costs by <span className="text-accent font-semibold">60%</span> with intelligent workflow automation.
             </motion.p>
 
             {/* Call to Action Buttons */}
