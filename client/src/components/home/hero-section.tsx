@@ -48,7 +48,7 @@ export function HeroSection() {
           >
             {/* Hero Headline */}
             <motion.h1 
-              className="text-4xl sm:text-5xl lg:text-6xl font-inter font-bold text-white text-center mb-6"
+              className="text-3xl sm:text-4xl lg:text-5xl font-inter font-bold text-white text-center mb-4"
               variants={fadeUp}
             >
               Transform Your Business with{" "}
@@ -57,7 +57,7 @@ export function HeroSection() {
             
             {/* Concise Sales Message */}
             <motion.p 
-              className="text-lg sm:text-xl text-gray-300 text-center mb-8 max-w-2xl"
+              className="text-base sm:text-lg text-gray-300 text-center mb-6 max-w-2xl"
               variants={fadeUp}
             >
               Increase efficiency by <span className="text-accent font-semibold">300%</span> and cut costs by <span className="text-accent font-semibold">60%</span> with intelligent workflow automation.
@@ -70,13 +70,13 @@ export function HeroSection() {
             >
               <a 
                 href="#contact" 
-                className="bg-accent hover:bg-accent/90 text-gray-900 font-inter font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-base sm:text-lg shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 text-center"
+                className="bg-accent hover:bg-accent/90 text-gray-900 font-inter font-semibold px-6 py-3 rounded-lg transition-all duration-300 text-sm sm:text-base shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 text-center"
               >
                 Get Started
               </a>
               <a 
                 href="#services" 
-                className="border-2 border-accent text-white hover:bg-accent hover:text-gray-900 font-inter font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-base sm:text-lg text-center"
+                className="border-2 border-accent text-white hover:bg-accent hover:text-gray-900 font-inter font-semibold px-6 py-3 rounded-lg transition-all duration-300 text-sm sm:text-base text-center"
               >
                 Learn More
               </a>
