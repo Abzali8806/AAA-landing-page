@@ -46,6 +46,32 @@ export function HeroSection() {
             animate="visible"
             variants={fadeUp}
           >
+            {/* Hero Headline */}
+            <motion.h1 
+              className="text-4xl sm:text-5xl lg:text-6xl font-inter font-bold text-white text-center mb-6"
+              variants={fadeUp}
+            >
+              Transform Your Business with{" "}
+              <span className="text-accent">AI-Powered Automation</span>
+            </motion.h1>
+            
+            {/* Sales Message */}
+            <motion.p 
+              className="text-lg sm:text-xl text-gray-300 text-center mb-4 max-w-3xl"
+              variants={fadeUp}
+            >
+              Stop wasting 40+ hours per week on repetitive tasks. Our intelligent workflow automation 
+              increases efficiency by <span className="text-accent font-semibold">300%</span> and cuts operational costs by up to <span className="text-accent font-semibold">60%</span>.
+            </motion.p>
+            
+            {/* Value Proposition */}
+            <motion.p 
+              className="text-base sm:text-lg text-gray-400 text-center mb-8 max-w-2xl"
+              variants={fadeUp}
+            >
+              Join 500+ businesses already saving thousands of hours monthly with our proven automation solutions.
+            </motion.p>
+
             {/* Call to Action Buttons */}
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center"
