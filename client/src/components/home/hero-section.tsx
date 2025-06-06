@@ -23,6 +23,21 @@ export function HeroSection() {
         </h1>
       </motion.div>
       
+      {/* Small CTA button at top-right */}
+      <motion.div 
+        className="absolute top-6 right-6 z-20"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <a 
+          href="#contact" 
+          className="bg-accent hover:bg-accent/90 text-gray-900 font-inter font-medium px-6 py-3 rounded-lg transition-all duration-300 text-sm shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-105"
+        >
+          Get Started
+        </a>
+      </motion.div>
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10 flex items-center justify-center min-h-screen">
         <div className="hero-grid-930 gap-8 items-center justify-center w-full">
           <motion.div 
