@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { fadeUp } from "@/lib/animations";
+import { fadeUp, float } from "@/lib/animations";
 import { DynamicHeroBackground } from "@/components/ui/dynamic-hero-background";
 import { Zap } from "lucide-react";
 
@@ -24,31 +24,48 @@ export function HeroSection() {
       </motion.div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10 flex items-center justify-center min-h-screen">
-        <motion.div 
-          className="flex flex-col items-center justify-center text-center"
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-        >
-          {/* Call to Action Buttons */}
+        <div className="hero-grid-930 gap-8 items-center justify-center w-full">
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="hero-text-930 max-w-5xl mx-auto flex flex-col items-center justify-center"
+            initial="hidden"
+            animate="visible"
             variants={fadeUp}
           >
-            <a 
-              href="#contact" 
-              className="bg-accent hover:bg-accent/90 text-gray-900 font-inter font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-base sm:text-lg shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 text-center"
+            {/* Call to Action Buttons */}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              variants={fadeUp}
             >
-              Start Your Transformation
-            </a>
-            <a 
-              href="#services" 
-              className="border-2 border-accent text-white hover:bg-accent hover:text-gray-900 font-inter font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-base sm:text-lg text-center"
-            >
-              Explore Services
-            </a>
+              <a 
+                href="#contact" 
+                className="bg-accent hover:bg-accent/90 text-gray-900 font-inter font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-base sm:text-lg shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 text-center"
+              >
+                Start Your Transformation
+              </a>
+              <a 
+                href="#services" 
+                className="border-2 border-accent text-white hover:bg-accent hover:text-gray-900 font-inter font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-base sm:text-lg text-center"
+              >
+                Explore Services
+              </a>
+            </motion.div>
           </motion.div>
-        </motion.div>
+          
+          <motion.div 
+            className="hero-image-930 relative"
+            variants={float}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* Add a subtle glow effect around the image */}
+            <div className="absolute -inset-4 bg-accent/20 rounded-2xl blur-xl opacity-60"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+              alt="Modern workflow automation dashboard interface" 
+              className="rounded-lg shadow-xl w-full h-auto relative z-10 max-h-[300px] sm:max-h-[400px] lg:max-h-none object-cover lg:object-contain" 
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   );
