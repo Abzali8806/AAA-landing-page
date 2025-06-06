@@ -75,8 +75,8 @@ export function HeroSection() {
             {/* Add a subtle glow effect around the image */}
             <div className="absolute -inset-4 bg-accent/20 rounded-2xl blur-xl opacity-60"></div>
             <img 
-              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-              alt="Visual workflow automation sequence showing connected process nodes and automated decision paths" 
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+              alt="Complex workflow automation diagram with AI-powered process orchestration and intelligent routing" 
               className="rounded-lg shadow-xl w-full h-auto relative z-10 max-h-[300px] sm:max-h-[400px] lg:max-h-none object-cover lg:object-contain" 
             />
           </motion.div>
