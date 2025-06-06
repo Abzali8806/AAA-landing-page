@@ -23,9 +23,9 @@ export function HeroSection() {
         </h1>
       </motion.div>
       
-      {/* Small CTA button at top-right */}
+      {/* Small CTA button at top-right - hidden on mobile and small tablets */}
       <motion.div 
-        className="absolute top-6 right-6 z-20"
+        className="absolute top-6 right-6 z-20 hidden lg:block"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
