@@ -75,8 +75,8 @@ export function HeroSection() {
             {/* Add a subtle glow effect around the image */}
             <div className="absolute -inset-4 bg-accent/20 rounded-2xl blur-xl opacity-60"></div>
             <img 
-              src="https://images.unsplash.com/photo-1526378722484-bd91ca387582?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-              alt="Modern AI robot agent performing intelligent automation and digital workflow optimization" 
+              src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+              alt="Humanoid AI robot showcasing advanced automation capabilities and intelligent workflow processing" 
               className="rounded-lg shadow-xl w-full h-auto relative z-10 max-h-[300px] sm:max-h-[400px] lg:max-h-none object-cover lg:object-contain" 
             />
           </motion.div>
