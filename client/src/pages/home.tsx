@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet';
-import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { HeroSection } from "@/components/home/hero-section";
 import { ServicesSection } from "@/components/home/services-section";
@@ -15,7 +14,6 @@ export default function Home() {
         <meta name="description" content="OptiFlows helps businesses streamline their operations through intelligent automation and process optimization solutions. Transform your business efficiency today." />
         <meta name="keywords" content="workflow automation, business process optimization, digital transformation, custom software integration, data analytics" />
       </Helmet>
-      <Navbar />
       <main>
         <HeroSection />
         <ServicesSection />
