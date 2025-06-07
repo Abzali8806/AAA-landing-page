@@ -18,7 +18,7 @@ export function ServicesSection() {
     {
       icon: Phone,
       title: "AI Voice Agents",
-      description: "Custom AI voice agents that handle phone calls to qualify leads, answer customer queries, and manage natural language communications 24/7."
+      description: "AI voice agents that qualify leads, answer questions, and hold natural conversations — available 24/7 so you don't have to be."
     },
     {
       icon: MessageSquare,
