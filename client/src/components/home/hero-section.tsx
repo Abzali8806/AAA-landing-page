@@ -51,8 +51,8 @@ export function HeroSection() {
               className="text-3xl sm:text-4xl lg:text-5xl font-inter font-bold text-white text-center mb-4"
               variants={fadeUp}
             >
-              Transform Your Business with{" "}
-              <span className="text-accent">Smart Workflow Automation</span>
+              Stop Wasting Hours on{" "}
+              <span className="text-accent">Repetitive Tasks</span>
             </motion.h1>
             
             {/* Value-Focused Sales Message */}
@@ -60,7 +60,7 @@ export function HeroSection() {
               className="text-base sm:text-lg text-gray-300 text-center mb-6 max-w-2xl"
               variants={fadeUp}
             >
-              Eliminate repetitive tasks and streamline communication to <span className="text-accent font-semibold">save 20+ hours weekly</span> while reducing operational costs.
+              Reclaim <span className="text-accent font-semibold">20+ hours per week</span> by automating workflows and optimizing communication. Focus on growth while we handle the routine.
             </motion.p>
 
             {/* Call to Action Buttons */}
