@@ -55,12 +55,12 @@ export function HeroSection() {
               <span className="text-accent">AI-Powered Automation</span>
             </motion.h1>
             
-            {/* Concise Sales Message */}
+            {/* Value-Focused Sales Message */}
             <motion.p 
               className="text-base sm:text-lg text-gray-300 text-center mb-6 max-w-2xl"
               variants={fadeUp}
             >
-              Increase efficiency by <span className="text-accent font-semibold">300%</span> and cut costs by <span className="text-accent font-semibold">60%</span> with intelligent workflow automation.
+              Eliminate repetitive tasks and streamline communication to <span className="text-accent font-semibold">save 20+ hours weekly</span> while reducing operational costs.
             </motion.p>
 
             {/* Call to Action Buttons */}
