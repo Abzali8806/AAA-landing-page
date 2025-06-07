@@ -52,7 +52,7 @@ export function HeroSection() {
               variants={fadeUp}
             >
               Transform Your Business with{" "}
-              <span className="text-accent">AI-Powered Automation</span>
+              <span className="text-accent">Smart Workflow Automation</span>
             </motion.h1>
             
             {/* Value-Focused Sales Message */}
