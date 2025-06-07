@@ -4,11 +4,8 @@ import { ServiceCard } from "@/components/ui/service-card";
 import { TechPattern } from "@/components/ui/tech-pattern";
 import { 
   Settings, 
-  Bot, 
-  GitBranch, 
-  LineChart, 
-  Users, 
-  Shield 
+  Phone, 
+  MessageSquare
 } from "lucide-react";
 
 export function ServicesSection() {
@@ -16,32 +13,17 @@ export function ServicesSection() {
     {
       icon: Settings,
       title: "Workflow Automation",
-      description: "Automate repetitive tasks and streamline your business processes to save time and reduce errors."
+      description: "Optimize your business processes by automating repetitive tasks, reducing manual effort and eliminating bottlenecks to save hours of work weekly."
     },
     {
-      icon: Bot,
-      title: "Business Process Optimization",
-      description: "Analyze and redesign your business processes to achieve maximum efficiency and productivity."
+      icon: Phone,
+      title: "AI Voice Agents",
+      description: "Custom AI voice agents that handle phone calls to qualify leads, answer customer queries, and manage natural language communications 24/7."
     },
     {
-      icon: GitBranch,
-      title: "Custom Software Integration",
-      description: "Connect your existing systems and applications to create a seamless operational environment."
-    },
-    {
-      icon: LineChart,
-      title: "Data Analytics Solutions",
-      description: "Transform your raw data into actionable insights with our advanced analytics solutions."
-    },
-    {
-      icon: Users,
-      title: "Digital Transformation Consulting",
-      description: "Strategic guidance to help your business navigate the digital transformation journey."
-    },
-    {
-      icon: Shield,
-      title: "Security & Compliance",
-      description: "Ensure your automated workflows and processes comply with industry regulations and security standards."
+      icon: MessageSquare,
+      title: "Communication Optimization",
+      description: "Streamline all communication channels including email, Slack, Teams, and third-party platforms to improve response times and team collaboration."
     }
   ];
 
@@ -62,12 +44,12 @@ export function ServicesSection() {
             Our <span className="text-accent">Services</span>
           </h2>
           <p className="text-lg sm:text-xl max-w-3xl mx-auto font-roboto font-light text-gray-100 px-4">
-            We help businesses streamline their operations through intelligent automation and process optimization.
+            Transform your business with our three core solutions: automated workflows, intelligent voice agents, and optimized communication systems.
           </p>
         </motion.div>
         
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
