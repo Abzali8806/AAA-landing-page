@@ -3,12 +3,6 @@ import { fadeUp, slideInLeft, slideInRight } from "@/lib/animations";
 import { TechPattern } from "@/components/ui/tech-pattern";
 
 export function AboutSection() {
-  const stats = [
-    { value: "200+", label: "Projects Completed" },
-    { value: "95%", label: "Client Satisfaction" },
-    { value: "15+", label: "Years Experience" },
-    { value: "20+", label: "Expert Consultants" }
-  ];
 
   return (
     <section id="about" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#1e3a60] to-[#2d5277] relative overflow-hidden">
@@ -46,29 +40,9 @@ export function AboutSection() {
             <p className="text-base sm:text-lg mb-6 font-roboto font-light text-gray-200">
               At OptiFlows, we're passionate about helping businesses achieve operational excellence through intelligent automation. Founded in 2015, we've helped hundreds of companies streamline their workflows and boost productivity.
             </p>
-            <p className="text-base sm:text-lg mb-6 font-roboto font-light text-gray-200">
+            <p className="text-base sm:text-lg mb-8 font-roboto font-light text-gray-200">
               Our team of experts combines deep technical knowledge with business acumen to deliver solutions that make a real impact on your bottom line.
             </p>
-            
-            <motion.div 
-              className="grid grid-cols-2 gap-4 sm:gap-6 mb-8"
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              {stats.map((stat, index) => (
-                <motion.div 
-                  key={index} 
-                  className="text-center bg-white/5 backdrop-blur-sm p-3 sm:p-4 rounded-lg border border-accent/10"
-                  whileHover={{ y: -5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-inter font-bold text-accent mb-2">{stat.value}</div>
-                  <p className="font-roboto font-light text-gray-200 text-sm sm:text-base">{stat.label}</p>
-                </motion.div>
-              ))}
-            </motion.div>
             
             <motion.div 
               className="mt-8"
