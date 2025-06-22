@@ -113,7 +113,7 @@ export function ProcessSection() {
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 text-center">
               <h4 className="text-xl font-bold text-white mb-3">Dedicated Support</h4>
               <p className="text-slate-300 mb-4">Ongoing optimization and support to ensure peak performance.</p>
-              <div className="text-3xl font-bold text-purple-400">24/7 support</div>
+              <div className="text-3xl font-bold text-purple-400">Full support</div>
             </div>
           </motion.div>
 
