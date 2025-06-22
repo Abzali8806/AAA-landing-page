@@ -93,24 +93,7 @@ export function WhyChooseUsSection() {
             ))}
           </div>
 
-          <motion.div variants={fadeIn} className="mb-16">
-            <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-600/50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-8 text-center">
-                Trusted by Healthcare Professionals
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {certifications.map((cert, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Shield className="w-8 h-8 text-white" />
-                    </div>
-                    <h4 className="text-lg font-semibold text-white mb-2">{cert.name}</h4>
-                    <p className="text-sm text-slate-300">{cert.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+
 
           <motion.div variants={fadeIn}>
             <div className="bg-gradient-to-r from-blue-600/20 to-green-600/20 border border-blue-400/30 rounded-2xl p-8 text-center">

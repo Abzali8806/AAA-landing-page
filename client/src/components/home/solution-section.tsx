@@ -111,6 +111,18 @@ export function SolutionSection() {
           </div>
 
           <motion.div variants={fadeIn} className="text-center">
+            <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 border border-green-400/30 rounded-2xl p-8 max-w-4xl mx-auto mb-8">
+              <div className="flex items-center justify-center mb-4">
+                <Shield className="w-8 h-8 text-green-400 mr-3" />
+                <h3 className="text-2xl font-bold text-white">
+                  HIPAA Compliant
+                </h3>
+              </div>
+              <p className="text-slate-300 text-lg">
+                Fully compliant with healthcare privacy regulations. Your patient data remains secure with enterprise-grade encryption and strict access controls.
+              </p>
+            </div>
+            
             <div className="bg-gradient-to-r from-blue-600/20 to-green-600/20 border border-blue-400/30 rounded-2xl p-8 max-w-4xl mx-auto">
               <h3 className="text-2xl font-bold text-white mb-4">
                 Ready to Transform Your Patient Communication?

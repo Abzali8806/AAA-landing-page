@@ -81,9 +81,9 @@ export function HeroSection() {
               <div className="text-slate-400 text-sm">Never miss a call again</div>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-              <div className="text-3xl font-bold text-green-400 mb-2">✓</div>
+              <div className="text-3xl font-bold text-green-400 mb-2">40%</div>
               <div className="text-slate-300 font-medium mb-1">Cost Reduction</div>
-              <div className="text-slate-400 text-sm">Lower administrative overhead</div>
+              <div className="text-slate-400 text-sm">Up to 40% savings possible</div>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
               <div className="text-3xl font-bold text-purple-400 mb-2">100%</div>
