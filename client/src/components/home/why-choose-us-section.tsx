@@ -115,28 +115,28 @@ export function WhyChooseUsSection() {
           <motion.div variants={fadeIn}>
             <div className="bg-gradient-to-r from-blue-600/20 to-green-600/20 border border-blue-400/30 rounded-2xl p-8 text-center">
               <h3 className="text-2xl font-bold text-white mb-6">
-                Success Metrics That Matter
+                Our Commitment to Excellence
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                  <div className="text-4xl font-bold text-blue-400 mb-2">100+</div>
-                  <div className="text-slate-300 font-medium">Practices Served</div>
-                  <div className="text-slate-400 text-sm mt-1">Across all specialties</div>
+                  <div className="text-4xl font-bold text-blue-400 mb-2">🏥</div>
+                  <div className="text-slate-300 font-medium">Healthcare Focus</div>
+                  <div className="text-slate-400 text-sm mt-1">Specialized in medical practices</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-green-400 mb-2">99.9%</div>
-                  <div className="text-slate-300 font-medium">Uptime Guarantee</div>
-                  <div className="text-slate-400 text-sm mt-1">Reliable 24/7 service</div>
+                  <div className="text-4xl font-bold text-green-400 mb-2">🔧</div>
+                  <div className="text-slate-300 font-medium">Custom Solutions</div>
+                  <div className="text-slate-400 text-sm mt-1">Tailored to your needs</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-purple-400 mb-2">85%</div>
-                  <div className="text-slate-300 font-medium">Cost Reduction</div>
-                  <div className="text-slate-400 text-sm mt-1">In administrative tasks</div>
+                  <div className="text-4xl font-bold text-purple-400 mb-2">🛡️</div>
+                  <div className="text-slate-300 font-medium">HIPAA Compliant</div>
+                  <div className="text-slate-400 text-sm mt-1">Secure patient data handling</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-orange-400 mb-2">4.9/5</div>
-                  <div className="text-slate-300 font-medium">Client Satisfaction</div>
-                  <div className="text-slate-400 text-sm mt-1">Based on reviews</div>
+                  <div className="text-4xl font-bold text-orange-400 mb-2">🤝</div>
+                  <div className="text-slate-300 font-medium">Full Partnership</div>
+                  <div className="text-slate-400 text-sm mt-1">From design to support</div>
                 </div>
               </div>
             </div>

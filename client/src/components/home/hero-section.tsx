@@ -23,7 +23,7 @@ export function HeroSection() {
           >
             <span className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-400/20 rounded-full text-blue-300 text-sm font-medium backdrop-blur-sm">
               <Shield className="inline w-4 h-4 mr-2" />
-              HIPAA-Compliant AI Voice Solutions
+              HIPAA-Compliant Solutions for Secure Patient Data
             </span>
           </motion.div>
           
@@ -81,9 +81,9 @@ export function HeroSection() {
               <div className="text-slate-400 text-sm">Never miss a call again</div>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-              <div className="text-3xl font-bold text-green-400 mb-2">85%</div>
+              <div className="text-3xl font-bold text-green-400 mb-2">✓</div>
               <div className="text-slate-300 font-medium mb-1">Cost Reduction</div>
-              <div className="text-slate-400 text-sm">In administrative tasks</div>
+              <div className="text-slate-400 text-sm">Lower administrative overhead</div>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
               <div className="text-3xl font-bold text-purple-400 mb-2">100%</div>

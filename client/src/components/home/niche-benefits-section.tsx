@@ -152,20 +152,20 @@ export function NicheBenefitsSection() {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400 mb-2">85%</div>
-                  <div className="text-slate-300">Reduction in missed calls</div>
+                  <div className="text-3xl font-bold text-blue-400 mb-2">📞</div>
+                  <div className="text-slate-300">Fewer missed calls</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400 mb-2">60%</div>
+                  <div className="text-3xl font-bold text-green-400 mb-2">⚡</div>
                   <div className="text-slate-300">Less administrative work</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-400 mb-2">40%</div>
-                  <div className="text-slate-300">Increase in patient satisfaction</div>
+                  <div className="text-3xl font-bold text-purple-400 mb-2">😊</div>
+                  <div className="text-slate-300">Better patient experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-400 mb-2">24/7</div>
-                  <div className="text-slate-300">Patient availability</div>
+                  <div className="text-3xl font-bold text-orange-400 mb-2">🕒</div>
+                  <div className="text-slate-300">24/7 availability</div>
                 </div>
               </div>
             </div>

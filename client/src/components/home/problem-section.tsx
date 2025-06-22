@@ -94,16 +94,16 @@ export function ProblemSection() {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-red-400 mb-2">30%</div>
+                  <div className="text-3xl font-bold text-red-400 mb-2">⚠️</div>
                   <div className="text-slate-300">Revenue loss from missed opportunities</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-orange-400 mb-2">40hrs</div>
-                  <div className="text-slate-300">Weekly staff time on repetitive tasks</div>
+                  <div className="text-3xl font-bold text-orange-400 mb-2">⏰</div>
+                  <div className="text-slate-300">Staff time on repetitive tasks</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-yellow-400 mb-2">60%</div>
-                  <div className="text-slate-300">Of practices struggle with patient communication</div>
+                  <div className="text-3xl font-bold text-yellow-400 mb-2">📞</div>
+                  <div className="text-slate-300">Practices struggle with patient communication</div>
                 </div>
               </div>
             </div>
