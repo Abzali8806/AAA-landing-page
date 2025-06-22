@@ -1,8 +1,12 @@
 import { Helmet } from 'react-helmet';
 import { Footer } from "@/components/layout/footer";
 import { HeroSection } from "@/components/home/hero-section";
-import { ServicesSection } from "@/components/home/services-section";
-import { AboutSection } from "@/components/home/about-section";
+import { ProblemSection } from "@/components/home/problem-section";
+import { SolutionSection } from "@/components/home/solution-section";
+import { NicheBenefitsSection } from "@/components/home/niche-benefits-section";
+import { ProcessSection } from "@/components/home/process-section";
+import { WhyChooseUsSection } from "@/components/home/why-choose-us-section";
+import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { ContactSection } from "@/components/home/contact-section";
 import { FloatingContactButton } from "@/components/ui/floating-contact-button";
 
@@ -10,14 +14,18 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>OptiFlows | Workflow Automation Agency</title>
-        <meta name="description" content="OptiFlows helps businesses streamline their operations through intelligent automation and process optimization solutions. Transform your business efficiency today." />
-        <meta name="keywords" content="workflow automation, business process optimization, digital transformation, custom software integration, data analytics" />
+        <title>AI Voice Agents for Healthcare | Automate Patient Communication</title>
+        <meta name="description" content="Custom AI voice agents for dentistry, concierge care, and weight loss clinics. Reduce administrative burden, improve patient experience, and grow your practice with HIPAA-compliant automation." />
+        <meta name="keywords" content="AI voice agents, healthcare automation, dental practice automation, concierge care, weight loss clinic, patient communication, HIPAA compliant, appointment scheduling" />
       </Helmet>
       <main>
         <HeroSection />
-        <ServicesSection />
-        <AboutSection />
+        <ProblemSection />
+        <SolutionSection />
+        <NicheBenefitsSection />
+        <ProcessSection />
+        <WhyChooseUsSection />
+        <TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />

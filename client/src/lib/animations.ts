@@ -50,6 +50,16 @@ export const slideInLeft: Variants = {
   visible: { 
     x: 0, 
     opacity: 1,
+    transition: { duration: 0.6 }
+  }
+};
+
+// Slide in up animation
+export const slideInUp: Variants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: { 
+    y: 0, 
+    opacity: 1,
     transition: { 
       type: "spring", 
       damping: 15, 

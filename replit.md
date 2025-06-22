@@ -1,8 +1,8 @@
-# OptiFlows - Workflow Automation Agency
+# OptiFlows - AI Voice Agent Agency for Healthcare
 
 ## Overview
 
-OptiFlows is a full-stack web application for a workflow automation agency. The application is built as a single-page marketing website with a contact form submission system. It features a modern, responsive design with dark theme aesthetics, animations, and comprehensive UI components.
+OptiFlows is a full-stack web application for an AI voice agent agency specializing in healthcare practices. The application is built as a single-page marketing website targeting dentistry, concierge/primary care, and weight loss clinics. It features a modern, professional design with healthcare-focused messaging, HIPAA compliance emphasis, and comprehensive UI components designed to convert healthcare professionals.
 
 ## System Architecture
 
@@ -41,9 +41,10 @@ OptiFlows is a full-stack web application for a workflow automation agency. The 
 - Error handling with proper HTTP status codes and validation feedback
 
 ### Frontend Pages
-- **Home Page**: Complete marketing site with hero, services, about, and contact sections
+- **Home Page**: Healthcare-focused marketing site with hero, problem identification, AI solution presentation, niche-specific benefits, process explanation, credibility section, testimonials, and contact sections
 - **404 Page**: Custom not found page
 - **Responsive Design**: Mobile-first approach with breakpoint-specific layouts
+- **Healthcare Messaging**: Specialized content for dentistry, concierge care, and weight loss clinics
 
 ### UI Components
 - Comprehensive component library based on shadcn/ui
@@ -105,6 +106,15 @@ OptiFlows is a full-stack web application for a workflow automation agency. The 
 
 ## Changelog
 - June 22, 2025. Initial setup
+- June 22, 2025. Complete redesign for AI voice agent agency targeting healthcare practices (dentistry, concierge care, weight loss clinics)
+
+## Recent Changes
+- Migrated from Replit Agent to standard Replit environment
+- Complete landing page redesign from workflow automation to healthcare-focused AI voice agents
+- Added new sections: Problem identification, AI solution presentation, niche-specific benefits, 4-step process, credibility/trust building
+- Updated hero section with HIPAA compliance messaging and healthcare-specific value propositions
+- Redesigned testimonials with healthcare practice examples
+- Implemented healthcare color palette (blues, greens) for trust and professionalism
 
 ## User Preferences
 
