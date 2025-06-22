@@ -15,14 +15,14 @@ export function ProcessSection() {
       icon: Settings,
       title: "Custom Design & Development",
       description: "We design and build your bespoke AI voice agent using industry-leading platforms, tailored to your practice's specific terminology, workflows, and brand voice.",
-      duration: "1-2 weeks",
+      duration: "Quick turnaround",
       color: "from-green-500 to-emerald-500"
     },
     {
       icon: Rocket,
       title: "Seamless Deployment",
       description: "We integrate with your existing systems and phone lines, ensuring zero disruption to your operations.",
-      duration: "2-3 days",
+      duration: "Rapid deployment",
       color: "from-purple-500 to-pink-500"
     },
     {
@@ -100,8 +100,8 @@ export function ProcessSection() {
           <motion.div variants={fadeIn} className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 text-center">
               <h4 className="text-xl font-bold text-white mb-3">Fast Implementation</h4>
-              <p className="text-slate-300 mb-4">Get your AI voice agent up and running in just 2-3 weeks, not months.</p>
-              <div className="text-3xl font-bold text-blue-400">2-3 weeks</div>
+              <p className="text-slate-300 mb-4">Get your AI voice agent up and running quickly, not months.</p>
+              <div className="text-3xl font-bold text-blue-400">Rapid setup</div>
             </div>
             
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 text-center">
