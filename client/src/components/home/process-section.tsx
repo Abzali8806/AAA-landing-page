@@ -117,31 +117,7 @@ export function ProcessSection() {
             </div>
           </motion.div>
 
-          <motion.div variants={fadeIn} className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-400/30 rounded-2xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                What Happens After Deployment?
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                <div className="space-y-3">
-                  <h4 className="text-lg font-semibold text-blue-400">Performance Monitoring</h4>
-                  <p className="text-slate-300">Real-time analytics on call handling, patient satisfaction, and system performance.</p>
-                </div>
-                <div className="space-y-3">
-                  <h4 className="text-lg font-semibold text-green-400">Continuous Improvement</h4>
-                  <p className="text-slate-300">Regular updates and optimizations based on your practice's evolving needs.</p>
-                </div>
-                <div className="space-y-3">
-                  <h4 className="text-lg font-semibold text-purple-400">Staff Training</h4>
-                  <p className="text-slate-300">Comprehensive training for your team on working alongside your new AI assistant.</p>
-                </div>
-                <div className="space-y-3">
-                  <h4 className="text-lg font-semibold text-orange-400">Expansion Options</h4>
-                  <p className="text-slate-300">Scale to additional locations or add new features as your practice grows.</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+
         </motion.div>
       </div>
     </section>
