@@ -13,8 +13,8 @@ export function ProcessSection() {
     },
     {
       icon: Settings,
-      title: "Custom Development",
-      description: "Our team builds and trains your AI voice agent with your practice's terminology, workflows, and brand voice.",
+      title: "Custom Design & Development",
+      description: "We design and build your bespoke AI voice agent using industry-leading platforms, tailored to your practice's specific terminology, workflows, and brand voice.",
       duration: "1-2 weeks",
       color: "from-green-500 to-emerald-500"
     },
@@ -46,11 +46,11 @@ export function ProcessSection() {
         >
           <motion.div variants={fadeIn} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Simple
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"> 4-Step Process </span>
+              How We Work:
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"> Our Agency Process </span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              From consultation to deployment, we handle everything. Your AI voice agent will be up and running in just 2-3 weeks.
+              From initial consultation to ongoing optimization, we partner with you to deliver custom AI voice agent solutions that transform your practice operations.
             </p>
           </motion.div>
 

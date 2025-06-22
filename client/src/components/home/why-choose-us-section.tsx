@@ -6,20 +6,20 @@ export function WhyChooseUsSection() {
   const reasons = [
     {
       icon: Shield,
-      title: "Healthcare Expertise",
-      description: "We specialize exclusively in healthcare practices, understanding HIPAA requirements, patient communication needs, and industry-specific workflows.",
+      title: "Custom Healthcare Solutions",
+      description: "We specialize in designing bespoke AI voice agents for healthcare practices, understanding HIPAA requirements, patient communication needs, and industry-specific workflows.",
       color: "text-blue-400"
     },
     {
       icon: Award,
-      title: "Proven Track Record",
-      description: "Successfully deployed AI voice agents across 100+ healthcare practices with measurable improvements in efficiency and patient satisfaction.",
+      title: "Expert Development Team",
+      description: "Our experienced team leverages industry-leading platforms to build custom AI voice agent solutions with measurable improvements in efficiency and patient satisfaction.",
       color: "text-green-400"
     },
     {
       icon: Users,
-      title: "Dedicated Support Team",
-      description: "Your success is our priority. We provide ongoing training, optimization, and technical support to ensure maximum ROI from your investment.",
+      title: "Full-Service Partnership",
+      description: "From design to deployment to ongoing optimization, we're your dedicated AI voice agent agency providing continuous support and refinement.",
       color: "text-purple-400"
     },
     {
@@ -61,11 +61,11 @@ export function WhyChooseUsSection() {
         >
           <motion.div variants={fadeIn} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Why Healthcare Practices
-              <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent"> Choose Us </span>
+              Why Partner
+              <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent"> With Us </span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              We're not just another AI company. We're healthcare automation specialists with deep industry knowledge and a proven track record of success.
+              We're your dedicated AI voice agent agency, specializing in custom healthcare solutions. Our expertise in tailored development and ongoing partnership ensures your success.
             </p>
           </motion.div>
 

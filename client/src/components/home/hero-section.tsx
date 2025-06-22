@@ -31,20 +31,20 @@ export function HeroSection() {
             variants={slideInLeft}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
           >
-            Automate Patient{" "}
+            Custom AI Voice Agents:{" "}
             <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
-              Communication
+              Your Solution
             </span>
             <br />
-            Grow Your Practice
+            for Streamlined Healthcare Operations
           </motion.h1>
           
           <motion.p
             variants={slideInRight}
             className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Custom AI voice agents for dentistry, concierge care, and weight loss clinics. 
-            Reduce administrative burden, improve patient experience, and focus on what matters most – patient care.
+            We design, build, and manage bespoke AI voice agent solutions tailored to your practice's unique needs. 
+            Serving dentistry, concierge care, and weight loss clinics with custom workflow automation.
           </motion.p>
           
           <motion.div
@@ -56,7 +56,7 @@ export function HeroSection() {
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg group"
               onClick={() => scrollToElement('contact')}
             >
-              Schedule Free Consultation
+              Discover Your Custom Solution
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             

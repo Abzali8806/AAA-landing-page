@@ -50,11 +50,11 @@ export function SolutionSection() {
         >
           <motion.div variants={fadeIn} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Meet Your
-              <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent"> AI Voice Assistant </span>
+              Our
+              <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent"> Tailored Solution </span>
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-              Our intelligent voice agents are specifically designed for healthcare practices, handling patient communications with the care and professionalism your patients expect.
+              We design and build custom AI voice agents specifically for your practice's unique workflows and patient needs. Each solution is tailored to integrate seamlessly with your existing systems and processes.
             </p>
           </motion.div>
 

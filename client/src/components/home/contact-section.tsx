@@ -188,10 +188,10 @@ export function ContactSection() {
           viewport={{ once: true, amount: 0.1 }}
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-bold mb-4 text-white">
-            Get In <span className="text-accent">Touch</span>
+            Schedule Your <span className="text-accent">Free Consultation</span>
           </h2>
           <p className="text-lg sm:text-xl max-w-3xl mx-auto font-roboto font-light text-gray-200 px-4">
-            Ready to streamline your operations? Reach out to us to discuss how we can help optimize your workflows.
+            Ready to discover your custom AI voice agent solution? Contact us to discuss how we can design a tailored system for your healthcare practice.
           </p>
         </motion.div>
         
