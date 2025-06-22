@@ -17,15 +17,7 @@ export function HeroSection() {
           animate="visible"
           className="text-center max-w-5xl mx-auto"
         >
-          <motion.div
-            variants={fadeIn}
-            className="mb-6"
-          >
-            <span className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-400/20 rounded-full text-blue-300 text-sm font-medium backdrop-blur-sm">
-              <Shield className="inline w-4 h-4 mr-2" />
-              HIPAA-Compliant Solutions for Secure Patient Data
-            </span>
-          </motion.div>
+
           
           <motion.h1
             variants={slideInLeft}
