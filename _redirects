@@ -1,0 +1,11 @@
+# Netlify redirects file
+# Redirect all traffic to index.html for single page application
+/*    /index.html   200
+
+# Force HTTPS
+http://optiflows.co.uk/*    https://optiflows.co.uk/:splat    301!
+http://www.optiflows.co.uk/*    https://www.optiflows.co.uk/:splat    301!
+
+# Redirect www to non-www (optional)
+https://www.optiflows.co.uk/*    https://optiflows.co.uk/:splat    301!
+
