@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OptiFlows | AI Voice Agents for Dental Practices</title>
-    <meta name="description" content="OptiFlows provides AI voice agent solutions specifically designed for dental practices. Never miss a call, convert more patients, and handle emergencies 24/7.">
+    <title>OptiFlows | AI Voice Agents for Healthcare Practices</title>
+    <meta name="description" content="OptiFlows provides AI voice agent solutions for healthcare practices. Never miss a call, convert more patients, and handle emergencies 24/7 across all medical specialties.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234F46E5'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/%3E%3C/svg%3E">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="OptiFlows | AI Voice Agents for Dental Practices">
-    <meta property="og:description" content="Never miss a call, convert more patients, and handle emergencies 24/7 with AI voice agents designed specifically for dental practices.">
+    <meta property="og:title" content="OptiFlows | AI Voice Agents for Healthcare Practices">
+    <meta property="og:description" content="Never miss a call, convert more patients, and handle emergencies 24/7 with AI voice agents designed for healthcare practices across all specialties.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.optiflows.co.uk/">
+    <meta property="og:url" content="https://optiflowsai.com/">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,6 +74,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .logo {
@@ -96,6 +98,7 @@
             justify-content: center;
             color: white;
             font-weight: 800;
+            font-size: 1.1rem;
         }
 
         .nav-links {
@@ -125,6 +128,8 @@
             transition: all 0.2s;
             border: none;
             cursor: pointer;
+            display: inline-block;
+            text-align: center;
         }
 
         .cta-button:hover {
@@ -133,11 +138,22 @@
             box-shadow: var(--shadow-lg);
         }
 
+        .cta-button-secondary {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .cta-button-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--background) 0%, var(--background-secondary) 100%);
-            padding: 6rem 0;
+            padding: 4rem 0;
             text-align: center;
+            background: linear-gradient(135deg, var(--background) 0%, var(--background-secondary) 100%);
         }
 
         .hero h1 {
@@ -147,15 +163,15 @@
             line-height: 1.1;
         }
 
-        .hero .highlight {
+        .hero h1 .highlight {
             color: var(--primary-blue);
         }
 
         .hero p {
             font-size: 1.25rem;
             color: var(--text-secondary);
-            margin-bottom: 2rem;
-            max-width: 600px;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -164,44 +180,31 @@
             display: flex;
             gap: 1rem;
             justify-content: center;
-            margin-bottom: 3rem;
             flex-wrap: wrap;
         }
 
-        .button-secondary {
-            background: var(--white);
-            color: var(--primary-blue);
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 2px solid var(--border);
-            transition: all 0.2s;
-        }
-
-        .button-secondary:hover {
-            border-color: var(--primary-blue);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow);
-        }
-
+        /* Stats Section */
         .stats {
+            padding: 3rem 0;
+            background: var(--white);
+        }
+
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .stat-card {
-            background: var(--white);
+            text-align: center;
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: var(--shadow);
+            background: var(--background);
             border: 1px solid var(--border);
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
             color: var(--primary-blue);
             margin-bottom: 0.5rem;
@@ -209,105 +212,107 @@
 
         .stat-label {
             font-weight: 600;
-            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
         }
 
         .stat-description {
             color: var(--text-secondary);
-            font-size: 0.875rem;
+            font-size: 0.9rem;
         }
 
-        /* Problem Section */
-        .problem {
-            padding: 6rem 0;
-            background: var(--white);
+        /* Pain Points Section */
+        .pain-points {
+            padding: 4rem 0;
+            background: var(--background);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
-        .section-title {
+        .section-header h2 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
 
-        .section-subtitle {
-            font-size: 1.125rem;
+        .section-header p {
+            font-size: 1.1rem;
             color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .problem-grid {
+        .pain-points-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
-        .problem-card {
-            background: var(--background);
+        .pain-point {
+            background: var(--white);
             padding: 2rem;
             border-radius: 12px;
+            box-shadow: var(--shadow);
             border: 1px solid var(--border);
         }
 
-        .problem-icon {
-            width: 48px;
-            height: 48px;
+        .pain-point-icon {
+            width: 60px;
+            height: 60px;
             background: var(--primary-blue);
-            border-radius: 8px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
-            color: white;
+            margin-bottom: 1.5rem;
             font-size: 1.5rem;
         }
 
-        .problem-title {
+        .pain-point h3 {
             font-size: 1.25rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        .problem-description {
+        .pain-point p {
             color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         /* Solution Section */
         .solution {
-            padding: 6rem 0;
-            background: var(--background);
+            padding: 4rem 0;
+            background: var(--white);
         }
 
-        .solution-grid {
+        .solution-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             align-items: center;
         }
 
-        .solution-content h2 {
+        .solution-text h2 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
         }
 
-        .solution-content p {
-            font-size: 1.125rem;
+        .solution-text p {
+            font-size: 1.1rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
         }
 
-        .feature-list {
+        .solution-features {
             list-style: none;
             margin-bottom: 2rem;
         }
 
-        .feature-list li {
+        .solution-features li {
             display: flex;
             align-items: center;
             gap: 0.75rem;
@@ -315,77 +320,109 @@
             font-weight: 500;
         }
 
-        .feature-check {
-            width: 20px;
-            height: 20px;
+        .solution-features li::before {
+            content: "✓";
             background: var(--accent-green);
+            color: white;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 700;
         }
 
-        .solution-visual {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border);
+        /* How It Works */
+        .how-it-works {
+            padding: 4rem 0;
+            background: var(--background);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            color: var(--text-secondary);
         }
 
         /* Services Section */
         .services {
-            padding: 6rem 0;
+            padding: 4rem 0;
             background: var(--white);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .service-card {
+        .service {
             background: var(--background);
-            padding: 2.5rem;
-            border-radius: 16px;
+            padding: 2rem;
+            border-radius: 12px;
             border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            text-align: center;
         }
 
         .service-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            border-radius: 12px;
+            width: 80px;
+            height: 80px;
+            background: var(--primary-blue);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            color: white;
-            font-size: 1.75rem;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
         }
 
-        .service-title {
+        .service h3 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
         }
 
-        .service-description {
+        .service p {
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
         }
 
         .service-features {
             list-style: none;
+            text-align: left;
         }
 
         .service-features li {
@@ -393,43 +430,85 @@
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 0.5rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
-            font-size: 0.875rem;
+        }
+
+        .service-features li::before {
+            content: "•";
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        /* Specialties Section */
+        .specialties {
+            padding: 4rem 0;
+            background: var(--background);
+        }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .specialty {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .specialty h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-blue);
+        }
+
+        .specialty p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
         }
 
         /* Contact Section */
         .contact {
-            padding: 6rem 0;
-            background: var(--background);
-        }
-
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
+            padding: 4rem 0;
+            background: var(--white);
         }
 
         .contact-form {
-            background: var(--white);
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--background);
             padding: 3rem;
             border-radius: 16px;
-            box-shadow: var(--shadow-lg);
             border: 1px solid var(--border);
+            box-shadow: var(--shadow-lg);
         }
 
         .form-group {
             margin-bottom: 1.5rem;
         }
 
-        .form-label {
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--text-primary);
         }
 
-        .form-input {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-            padding: 0.75rem 1rem;
+            padding: 0.75rem;
             border: 2px solid var(--border);
             border-radius: 8px;
             font-size: 1rem;
@@ -437,20 +516,33 @@
             background: var(--white);
         }
 
-        .form-input:focus {
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-blue);
         }
 
-        .form-textarea {
-            min-height: 120px;
+        .form-group textarea {
             resize: vertical;
+            min-height: 120px;
         }
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+        .submit-button {
+            width: 100%;
+            background: var(--primary-blue);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .submit-button:hover {
+            background: var(--primary-blue-hover);
+            transform: translateY(-1px);
         }
 
         /* Footer */
@@ -462,218 +554,308 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
             margin-bottom: 2rem;
         }
 
-        .footer-section h3 {
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--white);
+            color: var(--primary-blue);
         }
 
-        .footer-section p,
-        .footer-section a {
+        .footer-brand p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links ul li a {
             color: var(--text-muted);
             text-decoration: none;
-            margin-bottom: 0.5rem;
-            display: block;
+            transition: color 0.2s;
         }
 
-        .footer-section a:hover {
-            color: var(--white);
+        .footer-links ul li a:hover {
+            color: var(--primary-blue);
         }
 
         .footer-bottom {
-            border-top: 1px solid var(--text-secondary);
+            border-top: 1px solid var(--border);
             padding-top: 2rem;
             text-align: center;
             color: var(--text-muted);
         }
 
-        /* Responsive */
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 2rem 0;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
+            .hero p {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
             }
-            
-            .nav-links {
-                display: none;
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
             }
-            
-            .form-grid {
+
+            .stats-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
-            
-            .solution-grid {
+
+            .pain-points-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
+
+            .solution-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .specialties-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .contact-form {
+                margin: 0 1rem;
+                padding: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .solution-text h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus styles for accessibility */
+        .cta-button:focus,
+        .submit-button:focus,
+        input:focus,
+        textarea:focus {
+            outline: 2px solid var(--primary-blue);
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav container">
-            <a href="#" class="logo">
-                <div class="logo-icon">O</div>
-                OptiFlows
-            </a>
-            <ul class="nav-links">
-                <li><a href="#solution">How It Works</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#contact" class="cta-button">Get Started</a>
-        </nav>
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">
+                    <div class="logo-icon">O</div>
+                    OptiFlows
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>
-                Never Miss Another <span class="highlight">Patient Call</span><br>
-                With AI Voice Agents for Dental Practices
-            </h1>
-            <p>
-                Recover £15,000+ monthly in lost revenue with AI voice agents that answer every call, 
-                convert prospects into patients, and handle emergencies 24/7 - all without adding staff costs.
-            </p>
+            <h1>Never Miss Another <span class="highlight">Patient Call</span><br>With AI Voice Agents for Healthcare Practices</h1>
+            <p>Recover $200,000+ annually in lost revenue with AI voice agents that answer every call, convert prospects into patients, and handle emergencies 24/7 - all without adding staff costs.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="cta-button">Book Free Consultation</a>
-                <a href="#solution" class="button-secondary">See How It Works</a>
+                <a href="#how-it-works" class="cta-button cta-button-secondary">See How It Works</a>
             </div>
-            
-            <div class="stats">
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">24/7</div>
                     <div class="stat-label">Patient Support</div>
                     <div class="stat-description">Never miss a call again</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">75%</div>
-                    <div class="stat-label">Conversion Rate</div>
-                    <div class="stat-description">vs 50% industry average</div>
+                    <div class="stat-number">68%</div>
+                    <div class="stat-label">Call Answer Rate</div>
+                    <div class="stat-description">vs industry standard of 100%</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">£15K+</div>
-                    <div class="stat-label">Monthly Recovery</div>
+                    <div class="stat-number">$200K+</div>
+                    <div class="stat-label">Annual Recovery</div>
                     <div class="stat-description">In previously lost revenue</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section class="problem">
+    <!-- Pain Points Section -->
+    <section class="pain-points">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">The Hidden Cost of Missed Calls</h2>
-                <p class="section-subtitle">
-                    Every missed call represents lost revenue and patients who may never return to your practice.
-                </p>
+                <h2>The Hidden Cost of Missed Calls in Healthcare</h2>
+                <p>Every missed call represents lost revenue and patients who may never return to your practice.</p>
             </div>
-            
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">📞</div>
-                    <h3 class="problem-title">Missed Calls = Lost Revenue</h3>
-                    <p class="problem-description">
-                        The average dental practice only answers 80% of calls. With 100 monthly prospects, 
-                        that's £15,000+ in lost revenue from missed opportunities.
-                    </p>
+            <div class="pain-points-grid">
+                <div class="pain-point">
+                    <div class="pain-point-icon">📞</div>
+                    <h3>Missed Calls = Lost Patients</h3>
+                    <p>Healthcare practices answer only 68% of incoming calls, and just 42% convert to appointments. That means 71 potential patients lost for every 100 calls - worth $200,000+ annually in lost revenue.</p>
                 </div>
-                
-                <div class="problem-card">
-                    <div class="problem-icon">🏥</div>
-                    <h3 class="problem-title">Emergency Calls After Hours</h3>
-                    <p class="problem-description">
-                        Dental emergencies don't wait for business hours. Patients in pain call competitors 
-                        or go to hospitals when they can't reach you.
-                    </p>
+                <div class="pain-point">
+                    <div class="pain-point-icon">🚨</div>
+                    <h3>After-Hours Emergencies</h3>
+                    <p>Medical emergencies don't wait for business hours. When patients can't reach you at 7 PM, they call competitors or visit expensive ERs instead of booking with your practice.</p>
                 </div>
-                
-                <div class="problem-card">
-                    <div class="problem-icon">👥</div>
-                    <h3 class="problem-title">Staffing Challenges</h3>
-                    <p class="problem-description">
-                        76% of dental practices struggle to find qualified front desk staff. 
-                        Sick days and vacation coverage leave calls unanswered.
-                    </p>
+                <div class="pain-point">
+                    <div class="pain-point-icon">👥</div>
+                    <h3>Staffing Crisis</h3>
+                    <p>Healthcare faces a 3.2 million worker shortage by 2026. Front desk turnover costs $15,000-25,000 per replacement, and sick days leave calls unanswered.</p>
                 </div>
-                
-                <div class="problem-card">
-                    <div class="problem-icon">💬</div>
-                    <h3 class="problem-title">Inconsistent Patient Experience</h3>
-                    <p class="problem-description">
-                        Different staff members handle calls differently, leading to inconsistent 
-                        patient experiences and missed conversion opportunities.
-                    </p>
+                <div class="pain-point">
+                    <div class="pain-point-icon">💬</div>
+                    <h3>Inconsistent Patient Experience</h3>
+                    <p>Different staff provide varying service levels, leading to missed conversions and poor patient satisfaction. 23% of patients switch providers due to communication issues.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Solution Section -->
-    <section class="solution" id="solution">
+    <section class="solution">
         <div class="container">
-            <div class="solution-grid">
-                <div class="solution-content">
-                    <h2>AI Voice Agents Designed for Dental Practices</h2>
-                    <p>
-                        Our AI voice agents are specifically trained in dental terminology, procedures, 
-                        and patient communication to provide professional, consistent service 24/7.
-                    </p>
-                    
-                    <ul class="feature-list">
-                        <li>
-                            <span class="feature-check">✓</span>
-                            Answer every call with professional dental knowledge
-                        </li>
-                        <li>
-                            <span class="feature-check">✓</span>
-                            Schedule appointments directly in your practice management system
-                        </li>
-                        <li>
-                            <span class="feature-check">✓</span>
-                            Handle emergency triage and route urgent cases appropriately
-                        </li>
-                        <li>
-                            <span class="feature-check">✓</span>
-                            Convert prospects with proven dental sales techniques
-                        </li>
-                        <li>
-                            <span class="feature-check">✓</span>
-                            Provide consistent patient experience every time
-                        </li>
+            <div class="solution-content">
+                <div class="solution-text">
+                    <h2>AI Voice Agents Designed for Healthcare Practices</h2>
+                    <p>Our AI voice agents are specifically trained in medical terminology, procedures, and patient communication across multiple healthcare specialties to provide professional, consistent service 24/7.</p>
+                    <ul class="solution-features">
+                        <li>Answer every call with professional medical knowledge</li>
+                        <li>Schedule appointments directly in your practice management system</li>
+                        <li>Handle emergency triage and route urgent cases appropriately</li>
+                        <li>Convert prospects with proven healthcare sales techniques</li>
+                        <li>Provide consistent patient experience every time</li>
                     </ul>
-                    
                     <a href="#contact" class="cta-button">Get Your Custom Solution</a>
                 </div>
-                
                 <div class="solution-visual">
-                    <h3 style="margin-bottom: 1rem; color: var(--text-primary);">How It Works</h3>
-                    <div style="space-y: 1rem;">
-                        <div style="padding: 1rem; background: var(--background); border-radius: 8px; margin-bottom: 1rem;">
-                            <strong>1. Call Received</strong><br>
-                            <span style="color: var(--text-secondary);">AI agent answers within 2 rings</span>
+                    <!-- How It Works Steps -->
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3>Call Received</h3>
+                            <p>AI agent answers within 2 rings</p>
                         </div>
-                        <div style="padding: 1rem; background: var(--background); border-radius: 8px; margin-bottom: 1rem;">
-                            <strong>2. Patient Assessment</strong><br>
-                            <span style="color: var(--text-secondary);">Determines if emergency, appointment, or inquiry</span>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3>Patient Assessment</h3>
+                            <p>Determines urgency level, appointment type, or general inquiry</p>
                         </div>
-                        <div style="padding: 1rem; background: var(--background); border-radius: 8px; margin-bottom: 1rem;">
-                            <strong>3. Appropriate Action</strong><br>
-                            <span style="color: var(--text-secondary);">Schedules appointment, routes emergency, or provides information</span>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3>Appropriate Action</h3>
+                            <p>Schedules appointment, routes emergency, or provides information</p>
                         </div>
-                        <div style="padding: 1rem; background: var(--background); border-radius: 8px;">
-                            <strong>4. Follow-up</strong><br>
-                            <span style="color: var(--text-secondary);">Sends confirmation and updates practice management system</span>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <h3>Follow-up</h3>
+                            <p>Sends confirmation and updates practice management system</p>
                         </div>
                     </div>
                 </div>
@@ -685,71 +867,89 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Dental Practice Solutions</h2>
-                <p class="section-subtitle">
-                    Comprehensive AI voice agent services tailored specifically for dental practices.
-                </p>
+                <h2>Our Healthcare Practice Solutions</h2>
+                <p>Comprehensive AI voice agent services tailored for healthcare practices across all specialties.</p>
             </div>
-            
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service">
                     <div class="service-icon">📞</div>
-                    <h3 class="service-title">24/7 Call Answering</h3>
-                    <p class="service-description">
-                        Never miss a call again with AI agents that answer every call professionally, 
-                        day or night, weekends and holidays.
-                    </p>
+                    <h3>24/7 Call Answering</h3>
+                    <p>Never miss a call again with AI agents that answer every call professionally, day or night, weekends and holidays.</p>
                     <ul class="service-features">
-                        <li>• Professional greeting with practice name</li>
-                        <li>• Dental terminology and procedure knowledge</li>
-                        <li>• Emergency vs routine call classification</li>
-                        <li>• Appointment availability checking</li>
+                        <li>Professional greeting with practice name</li>
+                        <li>Medical terminology and specialty-specific knowledge</li>
+                        <li>Emergency vs routine call classification</li>
+                        <li>Appointment availability checking</li>
                     </ul>
                 </div>
-                
-                <div class="service-card">
+                <div class="service">
                     <div class="service-icon">📅</div>
-                    <h3 class="service-title">Appointment Scheduling</h3>
-                    <p class="service-description">
-                        Seamlessly schedule appointments directly in your practice management system 
-                        with real-time availability checking.
-                    </p>
+                    <h3>Appointment Scheduling</h3>
+                    <p>Seamlessly schedule appointments directly in your practice management system with real-time availability checking.</p>
                     <ul class="service-features">
-                        <li>• Real-time calendar integration</li>
-                        <li>• Multiple appointment types supported</li>
-                        <li>• Automatic confirmation messages</li>
-                        <li>• Rescheduling and cancellation handling</li>
+                        <li>Real-time calendar integration</li>
+                        <li>Multiple appointment types supported</li>
+                        <li>Automatic confirmation messages</li>
+                        <li>Rescheduling and cancellation handling</li>
                     </ul>
                 </div>
-                
-                <div class="service-card">
+                <div class="service">
                     <div class="service-icon">🚨</div>
-                    <h3 class="service-title">Emergency Triage</h3>
-                    <p class="service-description">
-                        Intelligent emergency assessment that routes urgent cases appropriately 
-                        while providing immediate care instructions.
-                    </p>
+                    <h3>Emergency Triage</h3>
+                    <p>Intelligent emergency assessment that routes urgent cases appropriately while providing immediate care instructions.</p>
                     <ul class="service-features">
-                        <li>• Pain level assessment protocols</li>
-                        <li>• Immediate dentist notification for emergencies</li>
-                        <li>• After-hours emergency routing</li>
-                        <li>• Care instruction provision</li>
+                        <li>Urgency level assessment protocols</li>
+                        <li>Immediate provider notification for emergencies</li>
+                        <li>After-hours emergency routing</li>
+                        <li>Care instruction provision</li>
                     </ul>
                 </div>
-                
-                <div class="service-card">
+                <div class="service">
                     <div class="service-icon">💰</div>
-                    <h3 class="service-title">Lead Conversion</h3>
-                    <p class="service-description">
-                        Convert more prospects into patients with proven sales techniques 
-                        specifically designed for dental services.
-                    </p>
+                    <h3>Lead Conversion</h3>
+                    <p>Convert more prospects into patients with proven sales techniques specifically designed for healthcare services.</p>
                     <ul class="service-features">
-                        <li>• Treatment benefit explanations</li>
-                        <li>• Insurance verification assistance</li>
-                        <li>• Payment plan information</li>
-                        <li>• Objection handling protocols</li>
+                        <li>Treatment benefit explanations</li>
+                        <li>Insurance verification assistance</li>
+                        <li>Payment plan information</li>
+                        <li>Objection handling protocols</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section class="specialties">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Healthcare Practices Across Specialties</h2>
+                <p>Our AI voice agents are customized for the unique needs of different healthcare specialties.</p>
+            </div>
+            <div class="specialties-grid">
+                <div class="specialty">
+                    <h4>Family Practice</h4>
+                    <p>Handle sick visits, medication refills, and routine scheduling</p>
+                </div>
+                <div class="specialty">
+                    <h4>Dermatology</h4>
+                    <p>Manage cosmetic consultations and insurance pre-authorizations</p>
+                </div>
+                <div class="specialty">
+                    <h4>Weight Loss Clinics</h4>
+                    <p>Convert time-sensitive inquiries with consistent program explanations</p>
+                </div>
+                <div class="specialty">
+                    <h4>Urgent Care</h4>
+                    <p>Provide 24/7 triage to compete with ER visits</p>
+                </div>
+                <div class="specialty">
+                    <h4>Specialty Practices</h4>
+                    <p>Coordinate referrals and manage complex scheduling</p>
+                </div>
+                <div class="specialty">
+                    <h4>Dental Practices</h4>
+                    <p>Handle emergency calls and cosmetic consultations</p>
                 </div>
             </div>
         </div>
@@ -758,52 +958,38 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="contact-container">
-                <div class="section-header">
-                    <h2 class="section-title">Ready to Recover Lost Revenue?</h2>
-                    <p class="section-subtitle">
-                        Book a free consultation to see how AI voice agents can transform your dental practice.
-                    </p>
-                </div>
-                
-                <form class="contact-form" name="contact" method="POST" data-netlify="true">
-                    <input type="hidden" name="form-name" value="contact" />
-                    
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-input">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="practice" class="form-label">Practice Name</label>
-                            <input type="text" id="practice" name="practice" class="form-input">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message" class="form-label">Tell us about your practice and current challenges *</label>
-                        <textarea id="message" name="message" class="form-input form-textarea" required 
-                                  placeholder="e.g., We're a 3-dentist practice missing about 20 calls per week and struggling with after-hours emergencies..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="cta-button" style="width: 100%; padding: 1rem;">
-                        Book Free Consultation
-                    </button>
-                </form>
+            <div class="section-header">
+                <h2>Ready to Recover Lost Revenue?</h2>
+                <p>Book a free consultation to see how AI voice agents can transform your healthcare practice.</p>
             </div>
+            <form class="contact-form" data-netlify="true" name="contact" method="POST" action="https://forms.gle/QVcfgcyqJWNGBgFy8">
+                <input type="hidden" name="form-name" value="contact" />
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="practice">Practice Name & Specialty</label>
+                        <input type="text" id="practice" name="practice" placeholder="e.g., Smith Family Practice">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Tell us about your practice and current challenges *</label>
+                    <textarea id="message" name="message" placeholder="e.g., We're a 3-provider family practice missing about 30 calls per week and struggling with after-hours coverage..." required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Book Free Consultation</button>
+            </form>
         </div>
     </section>
 
@@ -811,30 +997,32 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-brand">
                     <h3>OptiFlows</h3>
-                    <p>AI voice agent solutions specifically designed for dental practices.</p>
-                    <p>Recover lost revenue and provide exceptional patient care 24/7.</p>
+                    <p>Recover lost revenue and provide consistent patient experiences with AI voice agents designed for healthcare practices. Contact us through the form above to discuss your custom solution.</p>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <a href="#services">24/7 Call Answering</a>
-                    <a href="#services">Appointment Scheduling</a>
-                    <a href="#services">Emergency Triage</a>
-                    <a href="#services">Lead Conversion</a>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">24/7 Call Answering</a></li>
+                        <li><a href="#services">Appointment Scheduling</a></li>
+                        <li><a href="#services">Emergency Triage</a></li>
+                        <li><a href="#services">Lead Conversion</a></li>
+                    </ul>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Email: hello@optiflows.co.uk</p>
-                    <p>Phone: +44 (0) 20 XXXX XXXX</p>
-                    <p>Available: Monday - Friday, 9 AM - 6 PM GMT</p>
+                <div class="footer-links">
+                    <h4>Specialties</h4>
+                    <ul>
+                        <li><a href="#specialties">Family Practice</a></li>
+                        <li><a href="#specialties">Dermatology</a></li>
+                        <li><a href="#specialties">Weight Loss Clinics</a></li>
+                        <li><a href="#specialties">Urgent Care</a></li>
+                        <li><a href="#specialties">Specialty Practices</a></li>
+                    </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 OptiFlows. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2024 OptiFlows. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -856,8 +1044,34 @@
 
         // Form submission handling
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            // Netlify will handle the form submission
-            // You can add additional tracking or validation here if needed
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Redirect to Google Form with pre-filled data
+            const googleFormUrl = 'https://forms.gle/QVcfgcyqJWNGBgFy8';
+            window.open(googleFormUrl, '_blank');
+            
+            // Show success message
+            alert('Thank you! You\'ll be redirected to our consultation booking form.');
+        });
+
+        // Mobile menu toggle (if needed in future)
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile-open');
+        }
+
+        // Add loading animation to buttons
+        document.querySelectorAll('.cta-button, .submit-button').forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
         });
     </script>
 </body>
