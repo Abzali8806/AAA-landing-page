@@ -967,8 +967,11 @@
                 <h2>Ready to Recover Lost Revenue?</h2>
                 <p>Book a free consultation to see how AI voice agents can transform your healthcare office.</p>
             </div>
-            <form class="contact-form" data-netlify="true" name="contact" method="POST" action="https://forms.gle/QVcfgcyqJWNGBgFy8">
+            <form class="contact-form" data-netlify="true" name="contact" method="POST" netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="contact" />
+                <div style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="fullName">Full Name *</label>
@@ -1047,20 +1050,28 @@
             });
         });
 
-        // Form submission handling
+        // Form submission handling for Netlify
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
+            const form = this;
+            const formData = new FormData(form);
             
-            // Redirect to Google Form with pre-filled data
-            const googleFormUrl = 'https://forms.gle/QVcfgcyqJWNGBgFy8';
-            window.open(googleFormUrl, '_blank');
-            
-            // Show success message
-            alert('Thank you! You\'ll be redirected to our consultation booking form.');
+            // Submit to Netlify
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                // Show success message
+                alert('Thank you! We\'ll contact you within 24 hours to schedule your consultation.');
+                form.reset();
+            })
+            .catch((error) => {
+                alert('There was an error submitting your form. Please try again.');
+                console.error('Error:', error);
+            });
         });
 
         // Mobile menu toggle (if needed in future)
